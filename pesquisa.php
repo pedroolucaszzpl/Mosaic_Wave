@@ -23,12 +23,10 @@ include('conexao.php');
                 <div class="navbar-menu">
                     <ul class="navbar-items">
                         <li class="navbar-items-menu">
-                            <a class="nav-link" href="main.php" onclick="">Páginal Inicial</a>
+                            <a class="nav-link" href="index.php" onclick="">Páginal Inicial</a>
                         </li>
                         <li><select name="departamentos" id="departamentos" onchange="redirectToPage(this)">
                                 <option value="" disabled selected hidden>Departamentos</option>
-                                <option value="calcados">Calçados</option>
-                                <option value="acessorios">Acessórios</option>
                                 <option value="vestuario">Vestuário</option>
                                 <option value="especial">Edições Especiais</option>
 
@@ -43,7 +41,7 @@ include('conexao.php');
                 </span>
                 <menu id="mvertical">
                     <ul>
-                        <li><a href="main.php">Página Inicial</a></li>
+                        <li><a href="index.php">Página Inicial</a></li>
                         <li><a href="main.php">Calçados</a></li>
                         <li><a href="main.php">Acessórios</a></li>
                         <li><a href="main.php">Vestuário</a></li>
@@ -90,7 +88,7 @@ include('conexao.php');
                     while ($row = $resultado->fetch_assoc()) {
                         echo "<div class= 'all'>";
                         echo "<div class= 'tenisous'>";
-                        echo "<img src='" . $row["vestuario_img"] . "'>";
+                        echo "<img class='searchimg' src='" . $row["vestuario_img"] . "'>";
                         echo "<p class='name'>" . $row["vestuario_modelo"] . "</p>";
                         echo "<p class='price'>R$" . $row["vestuario_preco"] . "</p>";
                         echo "</div>";
