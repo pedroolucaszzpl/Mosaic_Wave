@@ -1,5 +1,5 @@
 <?php
-include 'conexao.php';
+include '../conexao.php';
 
 if (isset($_GET['tenis_id'])) {
     $tenis_id = $_GET['tenis_id'];
@@ -18,7 +18,25 @@ if (isset($_GET['tenis_id'])) {
 } else {
     die ("Item não específicado");
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    $tenis_modelo = $_POST['tenis_modelo'];
+    $tenis_preco = $_POST['tenis_preco'];
+    $tenis_desc = $_POST['tenis_des'];
+    $tenis_marca = $_POST['tenis_marca'];
+    $tenis_cor = $_POST['tenis_cor'];
+    $tenis_tamanho = $_POST['tenis_tamanho'];
+    $tenis_cat = $_POST['tenis_cat'];
+
+    $sql = "UPDATE tenis SET tenis_modelo = ?, tenis_preco = ?, tenis_desc = ?,tenis_marca = ?,tenis_cor = ?,tenis_tamanho = ?,tenis_cat = ? WHERE tenis_id = $tenis_id";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param("sisssss", $tenis_modelo, $tenis_preco, $tenis_desc, $tenis_marca, $tenis_cor, $tenis_tamanho, $tenis_cat);
+    $stmt->execute();
+
+    header('Location: ..\modelo.php ');
+    exit();
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,11 +44,12 @@ if (isset($_GET['tenis_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=stylesheet href="../css/style.css">
+    <link rel=stylesheet href="../css/update.css">
     <title>Editar Calçados</title>
 </head>
 
 <body>
+    <div class="container">
     <h2>Editar Calçados</h2>
     <form action="modelo.php" class="formulario" method="post">
 
@@ -75,6 +94,7 @@ if (isset($_GET['tenis_id'])) {
 
             <button class="btn" type="submit">Atualizar</button>
     </form>
+    </div>
 </body>
 
 </html>
