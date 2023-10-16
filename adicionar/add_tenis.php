@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "INSERT INTO tenis (tenis_img , tenis_modelo , tenis_marca , tenis_desc ,tenis_preco , tenis_cor , tenis_tamanho, tenis_cat) VALUES ('$url_imagem','$nome','$marca','$descricao','$preco', '$cor', '$tamanho', '$categoria')";
 
         if ($mysqli->query($sql)) {
-            echo "Tenis adicionado com sucesso.";
+            echo "Tenis adicionado com sucesso. <a href='../especiais.php'>Voltar</a>";
         } else {
             die("Erro na inserção: " . $mysqli->error);
         }
