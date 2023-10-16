@@ -13,12 +13,28 @@
     padding: 0;
     scroll-behavior: smooth;
     box-sizing: content-box;
-    font-family: 'Bauhaus', serif !important;
 }
 
 body {
     width: 100%;
     height: 100%;
+    background-image: url(../img/bg2.jpg);
+    background-repeat: no-repeat;
+   background-size: 100%;
+} 
+
+#botao-add{
+    background-color: #01d816; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 5px 10px; /* Espaçamento interno */
+    border: none; /* Remover a borda padrão */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Alterar o cursor ao passar o mouse */
+    font-size: 14px; /* Tamanho da fonte */
+    text-align: center; /* Alinhamento de texto */
+    text-decoration: none; /* Remover sublinhado de links */
+    width: 330px;
+    margin-top: 5px;
 }
 
 /*cabeçalho*/
@@ -41,10 +57,6 @@ body {
 }
 
 #menu_vertical {
-    display: none;
-}
-
-menu {
     display: none;
 }
 
@@ -75,8 +87,7 @@ aside {
     align-items: center;
     justify-content: center;
 }
-
-.navbar-menu ul {
+.navbar-menu ul{
     align-items: center;
 }
 
@@ -96,6 +107,7 @@ aside {
 }
 
 #logo1 {
+    display: contents;
     width: 100%;
 }
 
@@ -121,6 +133,7 @@ aside {
     text-decoration: none;
     align-items: center;
     justify-content: center;
+    font-family: "Gotham";
 }
 
 .nav-link:hover {
@@ -132,6 +145,7 @@ aside {
     background-color: var(--black);
     font-size: 20px;
     color: var(--white);
+    font-family: "Gotham";
     padding-left: 20px;
 }
 
@@ -140,7 +154,7 @@ aside {
 }
 
 #lupa {
-    width: 6%;
+    width: 30px;
     padding-right: 20px;
 }
 
@@ -152,7 +166,7 @@ aside {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 430px;
+    width: 530px;
     height: 20px;
 }
 
@@ -167,238 +181,173 @@ aside {
     width: 94%;
     height: 100%;
     font-size: 15px;
+    font-family: "Gotham";
     padding-left: 5px;
 }
 
-.logarConta {
+.logarConta{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 70px;
     height: 40px;
 }
-
-.logarConta a {
+.logarConta a{
     text-decoration: none;
     color: #fff;
+    font-family: "Gotham";
 }
-
-.logarConta:hover {
+.logarConta:hover{
     background-color: var(--InGreen);
     border-radius: 3px;
 }
 
+.descricao {
+    max-width: 400px; /* Define a largura máxima da descrição do produto */
+    margin: 0 auto; /* Centraliza a descrição do produto horizontalmente */
+    text-align: center; /* Centraliza o texto no centro */
+    padding: 35px; /* Adiciona espaçamento interno */
+    border: 2px solid #ccc; /* Adiciona uma borda ao redor da descrição do produto */
+    border-radius: 10px; /* Borda arredondada */
+    background-color: #f9f9f9; /* Cor de fundo */
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.tam {
+    margin-top: 5px;
+}
+
+.valor {
+    margin-top: 5px;
+}
+
+.pagamento  {
+    border: solid 2px #ccc;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+#pagamento {
+    border: none;
+    margin-top: 3px;
+}
+
+.botoes-mostruario {
+    margin-top: 5px;
+}
+
+.descric {
+    margin-top:20px;
+    margin-left: 40px;
+    margin-right: 10px;
+    background-color: #fff;
+    height: 300px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+@media screen and (max-width:750px) {
+    #menu_vertical {
+        display: block;
+    }
+    #icon {
+        padding-left: 8px;
+    }
+
+    .navbar {
+        align-items: left;
+    }
+
+    .navbar-logo {
+        width: 65px;
+        align-items: left;
+        margin: 8px;
+    }
+
+    .search {
+        width: 230px;
+    }
+
+    .contentHead {
+        display: none;
+    }
+
+    #carrinho {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 751px) and (max-width:1000px) {
+    #menu_vertical {
+        display: block;
+    }
+    #icon {
+        padding-left: 8px;
+    }
+
+    .navbar {
+        align-items: left;
+    }
+
+    .navbar-logo {
+        width: 65px;
+        align-items: left;
+        margin: 8px;
+    }
+
+    .search {
+        width: 200px;
+    }
+
+    .ask{
+        width: 250px;
+    }
+    .contentHead {
+        display: none;
+    }
+
+    #carrinho {
+        display: none;
+    }
+
+}
 /*main*/
+
 .barra {
     width: 100%;
     height: 35px;
     background-color: rgb(255, 255, 255);
 }
 
-div#linhas {
+#linhas {
     display: flex;
     align-items: center;
 }
 
 .line {
-    width: 35%;
+    width: 50%;
     height: 2px;
     background: var(--black);
     margin: 15px;
 }
 
-.linep {
-    width: 80%;
-    height: 2px;
-    background-color: #fff;
-    margin: 15px;
-}
-
 .pag {
     font-size: 20px;
-    font-family: "Bauhaus";
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
     font-weight: 700;
 }
-
-.sePurple {
-    display: flex;
-    width: 100%;
-    height: 35px;
-    background-color: #9400D3;
-    justify-content: end;
-}
-
-.add {
-    border-radius: 5px;
-    background-color: #00FF00;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    margin: 5px 10px 5px 0;
-
-
-}
-
-.add:hover {
-    background-color: #04D004;
-}
-
-.ous {
-    background-color: #9400D3;
-    width: 100%;
-    padding-top: 10px;
-    height: 370px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.all {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.all button {
-    margin-top: 5px;
-}
-
-.calcous {
-    background-color: #211B15;
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    padding-top: 5px;
-}
-
-.calcous p {
-    color: #fff;
-    font-family: "Bauhaus";
-    font-size: 20px;
-    text-decoration: underline;
-    padding: 0 15px 0 15px;
-}
-
-.calcous img {
-    width: 30px;
-}
-
-.tenisous {
-    border: solid 3px #211B15;
-    border-radius: 10px;
-    margin: 20px 20px 0;
-    background-color: #fff;
-    height: 260px;
-    width: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.tenisous img {
-    padding-top: 3px;
-    width: 150px;
-    height: 150px;
-}
-
-p.name {
-    font-family: "Bauhaus";
-    font-size: 13px;
-    margin: 0 5px;
-    font-weight: bold;
-}
-
-p.price {
-    font-family: "Bauhaus";
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.secGreen {
-    width: 100%;
-    height: 10px;
-    background-color: #00FF00;
-}
-
-.camibaw {
-    background-color: #211B15;
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    padding-top: 5px;
-}
-
-.camibaw img {
-    width: 50px;
-}
-
-.camibaw p {
-    color: #fff;
-    font-family: "Bauhaus";
-    font-size: 20px;
-    text-decoration: underline;
-    padding: 0 15px 0 15px;
-}
-
-.baw {
-    background-color: #00FF00;
-    width: 100%;
-    padding-top: 10px;
-    height: 370px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.camisabaw {
-    margin: 20px 20px 0;
-    border: solid 3px #211B15;
-    border-radius: 10px;
-    background-color: #fff;
-    height: 250px;
-    width: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.camisabaw img {
-    padding-top: 3px;
-    height: 150px;
-}
-
-.excluir_btn {
-    background-color: red;
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.editar_btn {
-    margin-top: 5px;
-    background-color: rgb(126, 126, 235);
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.exclude {
-    display: contents;
-}
-
 /*footer css*/
 
 .footer-clean {
     padding: 30px 0;
     background-color: var(--InPurple);
-    color: var(--white);
-    bottom: 0;
-    width: 100%;
+    color: #fff;
 }
 
 .footer-clean h3 {
@@ -452,7 +401,7 @@ p.price {
     display: inline-block;
     text-align: center;
     border-radius: 50%;
-    border: 1px solid var(--grey);
+    border: 1px solid #ccc;
     margin-left: 10px;
     margin-top: 22px;
     color: inherit;
@@ -482,24 +431,319 @@ p.price {
     opacity: 0.6;
 }
 
+.barra {
+    width: 100%;
+    height: 35px;
+    background-color: rgb(255, 255, 255);
+}
 
-@media screen and (max-width:750px) {
-    .line {
-        width: 20%;
-    }
+.galery {
+    padding-top: 70px;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background: #211B15;
+    width: 100%;
 
-    p.pag {
-        font-size: 16px;
-    }
+}
+.fotos{
+    width: 125px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap:3%;
+}
+.fotos img{
+width: 125px;
+margin-bottom: 10px;
+margin-right: 20px;
 
-    .baw {
-        display: inline-table;
-    }
+}
 
-    .ous {
-        display: inline-table;
-    }
+.img2 {
+width: 500px;
+height: 450px;
 
+}
+
+
+#linhas {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    width: 42%;
+    height: 2px;
+    background: var(--black);
+    margin: 15px;
+}
+
+.pag {
+    font-size: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+label {
+   font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+   color: #ccc;
+   text-align: left !important;
+   margin: 0px;
+}
+
+#l {
+    margin: 6px;
+}
+
+#b {
+    margin: 0px;
+}
+
+input#acessorio_modelo {
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#acessorio_preco {
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#acessorio_des {
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#acessorio_marca {
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#acessorio_cor {
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#acessorio_tamanho {
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#acessorio_cat {
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+.btn {
+    background-color: var(--InGreen);
+    color:  #ffff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    font-size: 16px;
+    margin: 10px 65px;
+ }
+ .btn:hover{
+    background-color: var(--Green);
+ }
+
+.container {
+    background-color: #211B15;
+   opacity: 95% ;
+   margin-top: 1%;
+   border-radius: 20px;
+   border: solid 3px #8B53FF;
+   display: flex;
+   flex-direction: column;
+   align-items: center !important;
+   justify-content: center !important;
+   width: 350px;
+   margin: 1% 35%;
+   padding: 10px 10px;
+}
+
+input#vestuario_modelo {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#vestuario_preco {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#vestuario_des {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#vestuario_marca {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#vestuario_cor {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#vestuario_tamanho {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#vestuario_cat {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#tenis_modelo {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#tenis_preco {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#tenis_des {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#tenis_marca {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#tenis_cor {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#tenis_tamanho {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+input#tenis_cat {
+    margin: 2px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 15px;
+    font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+@media screen and (min-width: 370px) and (max-width:750px) {
     #menu_vertical {
         display: block;
     }
@@ -530,31 +774,44 @@ p.price {
         display: none;
     }
 
+    .marcas {
+        height: 350px;
+    }
+
+    .brandimg img {
+        width: 100px;
+        height: 100px !important;
+    }
+
+    .brandimg {
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3%;
+    }
+
+    .brand {
+        height: 100px;
+    }
+
+    .brand1 {
+        height: 100px;
+    }
+
+    .desc_produto{
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+    }
+
+    .principal{
+    }
+    .slidesec {
+        display: flex;
+    }
 }
 
-@media screen and (min-width: 751px) and (max-width:1000px) {
-    .line {
-        width: 35%;
-    }
-
-    p.pag {
-        font-size: 16px;
-    }
-
-    .baw {
-        height: 900px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 3%;
-    }
-
-    .ous {
-        height: 900px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 3%;
-    }
-
+@media screen and (min-width: 750px) and (max-width:1000px) {
     #menu_vertical {
         display: block;
     }
@@ -577,8 +834,8 @@ p.price {
         width: 200px;
     }
 
-    .ask {
-        width: 250px;
+    .ask{
+        width: 450px;
     }
 
     .contentHead {
@@ -589,32 +846,42 @@ p.price {
         display: none;
     }
 
-}
+    .marcas {
+        height: 550px;
+        width: 100%;
+    }
 
-.content_form{
-    background-color: #babab9;
-    width: 100%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+    .brandimg img {
+        width: 150px;
+        height: 150px !important;
+    }
 
-.content_form h1{
-    color: #211B15;
-}
+    .b1 {
+        padding-top: 35px;
+    }
 
-form{
-    color: #211B15;
-    height: 300px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-}
+    .brandimg {
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3%;
+        width: 100%;
+    }
+    .brandimg p{
+        padding-top: 60px;
+    }
+    .brand {
+        height: 100px;
+        
+    }
+    .slide {
+        display: none;
+    }
 
-form div{
-    margin-top:7px;
+    .slidesec {
+        display: flex;
+    }
+    .img1 {
+        width: 50%;
+    }
 }

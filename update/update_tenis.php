@@ -31,6 +31,7 @@ if (isset($_GET['tenis_id'])) {
 </head>
 
 <body>
+    <div class="container">
     <h2>Editar Calçados</h2>
     <form action="modelo.php" class="formulario" method="post">
 
@@ -75,6 +76,7 @@ if (isset($_GET['tenis_id'])) {
 
             <button class="btn" type="submit">Atualizar</button>
     </form>
+    </div>
 </body>
 
 </html>
