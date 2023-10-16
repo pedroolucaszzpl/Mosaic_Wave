@@ -13,9 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['funcionario_email'];
     $senha = $_POST['funcionario_senha'];
 
+    // Hash da senha usando password_hash()
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
     $sql = "INSERT INTO funcionario (funcionario_nome,funcionario_email,funcionario_senha) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt-> bind_param("sss", $nome, $email, $senha);
+    $stmt-> bind_param("sss", $nome, $email, $senha_hash);
     $stmt->execute();
 
     header ('Location: logar.php ');

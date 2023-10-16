@@ -67,7 +67,6 @@
                 <div class="line"></div>
             </div>
         </div>
-        <div class="desc_produto">
             <?php
             session_start();
             include 'conexao.php';
@@ -80,7 +79,7 @@
                 while ($row = $resultado->fetch_assoc()) {
                     echo "<div class='desc_produto'>";
                     echo "<div class='principal'>";
-                    echo "<img class='img2' src='" . $row["tenis_img"];
+                    echo "<img class='img2' src='" . $row["tenis_img"] . "'>";
                     echo "</div>";
                     echo "<div class='descricao'>";
                     echo "<div class='nome'>";
