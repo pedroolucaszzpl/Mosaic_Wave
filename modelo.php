@@ -43,9 +43,9 @@
                 </menu>
             </div>
             <div class="search">
-                <form class="formss" action="pesquisa.php" method="get">
+                <form class="formss" action="pesquisa.php" method="post">
                     <input type="image" id="lupa" src="img/lupa.png" alt="lupa">
-                    <input type="text" placeholder="   O que você precisa?" class="ask">
+                    <input name='termo' type="text" placeholder=" O que você precisa?" class="ask">
                 </form>
             </div>
             <div class="buy">
