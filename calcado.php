@@ -22,8 +22,6 @@
                         </li>
                         <li><select name="departamentos" id="departamentos" onchange="redirectToPage(this)">
                                 <option value="" disabled selected hidden>Departamentos</option>
-                                <option value="calcados">Calçados</option>
-                                <option value="acessorios">Acessórios</option>
                                 <option value="vestuario">Vestuário</option>
                                <option value="especial">Edições Especiais</option>
 

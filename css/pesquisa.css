@@ -207,6 +207,14 @@ menu {
     margin-right: 0;
 }
 
+.name {
+    color: white;
+}
+
+.price {
+    color: white;
+}
+
 @keyframes animacao {
     0% {
         margin-left: 0;
@@ -275,7 +283,7 @@ button {
     font-weight: 700;
 }
 
-.brandimg {
+.searchimg {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -291,10 +299,10 @@ button {
     height: 310px;
 }
 
-.brandimg img {
-    width: 200px;
-    height: 200px;
-    border: 3px solid transparent;
+.searchimg{
+    width: 450px;
+    height: 450px;
+    border: 80px solid transparent;
     /* Adicione uma borda transparente */
     transition: border 0.3s;
 }
@@ -303,12 +311,12 @@ button {
     height: 200px;
 }
 
-.brandimg img.gren:hover {
+.searchimg.gren:hover {
     background: linear-gradient(white, white) padding-box, linear-gradient(to right, #00FF00, #3cff3c, #85ff85) border-box;
-    border: 3px solid transparent;
+    border: 80px solid transparent;
 }
 
-.brandimg img.purpl:hover {
+.searchimg.purpl:hover {
     background: linear-gradient(white, white) padding-box, linear-gradient(to right, #9400D3, #9b1dd2, #a64ecc) border-box;
     border: 3px solid transparent;
 }
