@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
+    <div class="container">
     <h2>Editar Calçados</h2>
     <form action="modelo.php" class="formulario" method="post">
 
@@ -93,6 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <button class="btn" type="submit">Atualizar</button>
     </form>
+    </div>
 </body>
 
 </html>

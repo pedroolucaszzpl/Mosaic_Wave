@@ -51,21 +51,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
+    <div class="container">
     <h2>Editar Vestuario</h2>
     <form action="" class="formulario" method="post">
 
         <input type="hidden" name="vestuario_id" id="vestuario_id" value="<?php echo $row['vestuario_id']; ?>" required>
 
-        <th><label for="vestuario_modelo">Modelo:</label>
+        <th><label id="b"  for="vestuario_modelo">Modelo:</label>
             <input type="text" name="vestuario_modelo" id="vestuario_modelo"
                 value="<?php echo $row['vestuario_modelo']; ?>" required>
         </th>
         </br>
-        <th> <label for="vestuario_preco">Preço:</label>
+        <th> <label id="b"  for="vestuario_preco">Preço:</label>
             <input type="number" name="vestuario_preco" id="vestuario_preco"
                 value="<?php echo $row['vestuario_preco']; ?>" required>
         </th>
         </br>
+<<<<<<< HEAD
         <th> <label for="vestuario_desc">Descrição:</label>
             <input type="text" name="vestuario_desc" id="vestuario_desc" value="<?php echo $row['vestuario_desc']; ?>"
                 required>
@@ -89,11 +91,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <th> <label for="vestuario_cat">Categoria:</label>
             <input type="text" name="vestuario_cat" id="vestuario_cat" value="<?php echo $row['vestuario_cat']; ?>"
                 required>
+=======
+        <th> <label id="b"  for="vestuario_des">Descrição:</label>
+            <input type="text" name="vestuario_des" id="vestuario_des"
+             value="<?php echo $row['vestuario_desc']; ?>" required>
+        </th>
+        </br>
+        <th> <label id="b"  for="vestuario_marca">Marca:</label>
+            <input type="text" name="vestuario_marca" id="vestuario_marca" 
+            value="<?php echo $row['vestuario_marca']; ?>" required>
+        </th>
+        </br>
+        <th> <label id="b"  for="vestuario_cor">Cor:</label>
+            <input type="text" name="vestuario_cor" id="vestuario_cor" 
+            value="<?php echo $row['vestuario_cor']; ?>" required>
+        </th>
+        </br>
+        <th> <label id="b"  for="vestuario_tamanho">Tamanho:</label>
+            <input type="text" name="vestuario_tamanho" id="vestuario_tamanho" 
+            value="<?php echo $row['vestuario_tamanho']; ?>" required>
+        </th>
+        </br>
+        <th> <label id="b" for="vestuario_cat">Categoria:</label>
+            <input type="text" name="vestuario_cat" id="vestuario_cat" 
+            value="<?php echo $row['vestuario_cat']; ?>" required>
+>>>>>>> edde79d9b157969872d39eb44d2c31665d567ce5
         </th>
         </br>
 
         <button class="btn" type="submit">Atualizar</button>
     </form>
+    </div>
 </body>
 
 </html>
