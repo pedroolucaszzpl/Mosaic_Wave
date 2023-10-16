@@ -20,6 +20,10 @@ body {
     height: 100%;
 }
 
+.formss{
+    display: flex;
+ }
+
 /*cabeçalho*/
 #icon {
     color: #fff;

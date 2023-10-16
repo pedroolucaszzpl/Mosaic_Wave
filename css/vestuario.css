@@ -137,12 +137,16 @@ aside {
 }
 
 #lupa {
-   width: 30px;
+   width: 50px;
    padding-right: 20px;
 }
 
 #carrinho {
    width: 40px;
+}
+
+.formss{
+   display: flex;
 }
 
 .search {

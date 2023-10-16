@@ -313,6 +313,10 @@ button {
     border: 3px solid transparent;
 }
 
+.formss{
+    display: flex;
+ }
+
 .b1 p {
     padding-top: 2px;
     font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;

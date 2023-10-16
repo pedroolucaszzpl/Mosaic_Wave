@@ -21,6 +21,10 @@ body {
     height: 100%;
 }
 
+.formss{
+    display: flex;
+ }
+
 #icon {
     color: #fff;
     cursor: pointer;

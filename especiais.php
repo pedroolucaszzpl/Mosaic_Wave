@@ -50,8 +50,10 @@
                 </menu>
             </div>
             <div class="search">
-                <img id="lupa" src="img/lupa.png" alt="lupa">
-                <input type="text" placeholder="   O que você precisa?" class="ask">
+            <form class="formss" action="pesquisa.php" method="get">
+                 <input type="image" id="lupa" src="img/lupa.png" alt="lupa">
+                 <input type="text" placeholder="   O que você precisa?" class="ask">
+            </form>
             </div>
             <div class="buy">
                 <img id="carrinho" src="img/carrinho.png" alt="">

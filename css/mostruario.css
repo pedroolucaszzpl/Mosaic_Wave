@@ -53,6 +53,10 @@ body {
     color: #ccc;
 }
 
+.formss{
+    display: flex;
+ }
+
 #menu_vertical li {
     list-style-type: none;
 }
