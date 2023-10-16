@@ -213,23 +213,28 @@ aside {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 20px 0 20px 0;
 }
 
 label{
-    color: #fff;
+    color: #211B15;
     font-weight: bold;
 }
 
 .nome h3{
-    color: #fff;
+    color: #211B15;
     font-weight: bold;
     font-family: "Bauhaus";
+}
+
+.cor{
+    display: flex;
 }
 p.price {
     font-family: "Bauhaus";
     font-size: 22px;
     font-weight: bold;
-    color: #fff;
+    color: #211B15;
 }
 
 .tam {
@@ -365,7 +370,7 @@ p.price {
 }
 
 .desc{
-    color: #fff;
+    color: #211B15;
 }
 
 
@@ -485,6 +490,7 @@ margin-right: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 150px;
+    
 }
 
 .principal img{
