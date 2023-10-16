@@ -18,7 +18,25 @@ if (isset($_GET['acessorio_id'])) {
 } else {
     die ("Item não específicado");
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    $acessorio_modelo = $_POST['acessorio_modelo'];
+    $acessorio_preco = $_POST['acessorio_preco'];
+    $acessorio_desc = $_POST['acessorio_des'];
+    $acessorio_marca = $_POST['acessorio_marca'];
+    $acessorio_cor = $_POST['acessorio_cor'];
+    $acessorio_tamanho = $_POST['acessorio_tamanho'];
+    $acessorio_cat = $_POST['acessorio_cat'];
+
+    $sql = "UPDATE acessorio SET acessorio_modelo = ?, acessorio_preco = ?, acessorio_desc = ?,acessorio_marca = ?,acessorio_cor = ?,acessorio_tamanho = ?,acessorio_cat = ? WHERE acessorio_id = $acessorio_id";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param("sisssss", $acessorio_modelo, $acessorio_preco, $acessorio_desc, $acessorio_marca, $acessorio_cor, $acessorio_tamanho, $acessorio_cat);
+    $stmt->execute();
+
+    header('Location: ..\modelo.php ');
+    exit();
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
