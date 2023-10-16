@@ -1,5 +1,5 @@
 <?php
-include 'conexao.php';
+include '../conexao.php';
 
 if (isset($_GET['acessorio_id'])) {
     $acessorio_id = $_GET['acessorio_id'];

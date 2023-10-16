@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /><!--Google Link Icon-->
-    <title>Document</title>
+    <title>IntenseStreet</title>
 </head>
 <body>
 <header>
@@ -81,7 +81,7 @@
                             echo "<p class='desc'>" . $row["vestuario_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["vestuario_preco"] . "</p>";
                             echo "<a class='excluir_btn' href='excluir_vest.php?vestuario_id=".$row['vestuario_id']."'>Excluir</a>";
-                            echo "<a class='editar_btn' href='update_vest.php?vestuario_id=".$row['vestuario_id']."'>Editar</a>";
+                            echo "<a class='editar_btn' href='update/update_vest.php?vestuario_id=".$row['vestuario_id']."'>Editar</a>";
                             echo "</div>";
 
                         }
@@ -120,7 +120,7 @@
                             echo "<p class='desc'>" . $row["acessorio_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["acessorio_preco"] . "</p>";
                             echo "<a class='excluir_btn' href='excluir_aces.php?acessorio_id=".$row['acessorio_id']."'>Excluir</a>";
-                            echo "<a class='editar_btn' href='update_aces.php?acessorio_id=".$row['acessorio_id']."'>Editar</a>";
+                            echo "<a class='editar_btn' href='update/update_aces.php?acessorio_id=".$row['acessorio_id']."'>Editar</a>";
                             echo "</div>";
 
                         }
@@ -165,7 +165,7 @@
                             echo "<p class='desc'>" . $row["tenis_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["tenis_preco"] . "</p>";
                             echo "<a class='excluir_btn' href='excluir_calc.php?tenis_id=".$row['tenis_id']."'>Excluir</a>";
-                            echo "<a class='editar_btn' href='update_tenis.php?tenis_id=".$row['tenis_id']."'>Editar</a>";
+                            echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=".$row['tenis_id']."'>Editar</a>";
                             echo "</div>";
 
                         }
