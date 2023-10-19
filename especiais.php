@@ -39,10 +39,8 @@
                 </span>
                 <menu id="mvertical">
                     <ul>
-                        <li><a href="main.php">Página Inicial</a></li>
-                        <li><a href="main.php">Calçados</a></li>
-                        <li><a href="main.php">Acessórios</a></li>
-                        <li><a href="main.php">Vestuário</a></li>
+                        <li><a href="index.php">Página Inicial</a></li>
+                        <li><a href="modelo.php">Calçados</a></li>
                         <li><a href="especiais.php">Edições Especiais</a></li>
                     </ul>
                 </menu>
@@ -107,9 +105,7 @@
                             echo "<input type='hidden' name='tenis_id' value='" . $row['tenis_id'] . "'>";
                             echo "<button class='excluir_btn' type='submit' data-item-id=" . $row['tenis_id'] . ">Excluir</button>";
                             echo "</form>";
-                            echo "<form method='GET' action='editar_calc.php'>";
-                            echo "<button class='editar_btn' href='excluir.php' data-item-id=" . $row['tenis_id'] . ">Editar</button>";
-                            echo "</form>";
+                            echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=".$row['tenis_id']."'>Editar</a>";
                             echo "</div>";
                             echo "</div>";
                         }
@@ -155,10 +151,10 @@
                             echo "</a>";
                             echo "<div class='exclude'>";
                             echo "<form method='POST' action='excluir/excluir_camisa.php'>";
-                            echo "<input type='hidden' name='tenis_id' value='" . $row['camiseta_id'] . "'>";
+                            echo "<input type='hidden' name='camiseta_id' value='" . $row['camiseta_id'] . "'>";
                             echo "<button class='excluir_btn' data-item-id=" . $row['camiseta_id'] . ">Excluir</button>";
                             echo "</form>";
-                            echo "<button class='editar_btn' href='excluir.php' data-item-id=" . $row['camiseta_id'] . ">Editar</button>";
+                            echo "<a class='editar_btn' href='update/update_cami.php?camiseta_id=".$row['camiseta_id']."'>Editar</a>";
                             echo "</div>";
                             echo "</div>";
                         }

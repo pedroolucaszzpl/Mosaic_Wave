@@ -35,9 +35,7 @@
                 <menu id="mvertical">
                     <ul>
                         <li><a href="index.php">Página Inicial</a></li>
-                        <li><a href="vestuario.php">Calçados</a></li>
-                        <li><a href="vestuario.php">Acessórios</a></li>
-                        <li><a href="vestuario.php">Vestuário</a></li>
+                        <li><a href="modelo.php">Calçados</a></li>
                         <li><a href="especiais.php">Edições Especiais</a></li>
                     </ul>
                 </menu>

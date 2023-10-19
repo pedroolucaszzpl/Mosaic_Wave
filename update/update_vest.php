@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container">
     <h2>Editar Vestuario</h2>
-    <form action="" class="formulario" method="post">
+    <form action="../modelo.php" class="formulario" method="post">
 
         <input type="hidden" name="vestuario_id" id="vestuario_id" value="<?php echo $row['vestuario_id']; ?>" required>
 
