@@ -12,7 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         $db_password = $row['funcionario_senha'];
+<<<<<<< HEAD
         
+=======
+        $_SESSION["usuario_id"] = $row['funcionario_id'];
+
+>>>>>>> c64d4b2012f6abd0cdb920f6725c5c8182bb998a
         // Verifica se a senha fornecida corresponde à senha no banco de dados
         if (password_verify($password, $db_password)) {
             // Senha válida, você pode continuar com a autenticação no site

@@ -148,6 +148,25 @@ aside {
     width: 40px;
 }
 
+.logout {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 40px;
+}
+
+.logout a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logout:hover {
+    background-color: var(--InGreen);
+    border-radius: 3px;
+}
+
 .search {
     display: flex;
     align-items: center;
