@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'conexao.php';
 if (!isset($_SESSION["usuario_id"])) {
     header('location: logar.php');
     exit ();

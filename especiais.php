@@ -115,9 +115,13 @@ if (!isset($_SESSION['usuario_id'])) {
                 </div>
             </div>
             <div class="sePurple">
-                <form method="post" class="adicionar" action="./adicionar/formadd_tenis.php">
-                    <input type="submit" class="add" value="+"></input>
-                </form>
+            <?php
+            if (isset($_SESSION['permissao'])) {
+            echo '<form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">';
+            echo  '<input type="submit" class="add" value="+"></input>';
+            echo '</form>';
+            }
+            ?>
             </div>
             <div class="calcous">
                 <img src="img/edicaoesp/ous/ous.png" alt="">
@@ -143,6 +147,7 @@ if (!isset($_SESSION['usuario_id'])) {
                             echo "<p class='price'>R$" . $row["tenis_preco"] . "</p>";
                             echo "</div>";
                             echo "</a>";
+                            if (isset($_SESSION['permissao'])) {
                             echo "<div class='exclude'>";
                             echo "<form method='POST' action='excluir/excluir_calc.php'>";
                             echo "<input type='hidden' name='tenis_id' value='" . $row['tenis_id'] . "'>";
@@ -150,6 +155,7 @@ if (!isset($_SESSION['usuario_id'])) {
                             echo "</form>";
                             echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=" . $row['tenis_id'] . "'>Editar</a>";
                             echo "</div>";
+                            }
                             echo "</div>";
                         }
 
@@ -163,9 +169,14 @@ if (!isset($_SESSION['usuario_id'])) {
                 ?>
             </div>
             <div class="secGreen">
-                <form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">
-                    <input type="submit" class="add" value="+"></input>
-                </form>
+
+            <?php
+            if (isset($_SESSION['permissao'])) {
+            echo '<form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">';
+            echo  '<input type="submit" class="add" value="+"></input>';
+            echo '</form>';
+            }
+            ?>
             </div>
             <div class="camibaw">
                 <img src="img/edicaoesp/baw/baw.png" alt="">
@@ -192,6 +203,7 @@ if (!isset($_SESSION['usuario_id'])) {
                             echo "<p class='price'>R$" . $row["camiseta_preco"] . "</p>";
                             echo "</div>";
                             echo "</a>";
+                            if (isset($_SESSION['permissao'])) {
                             echo "<div class='exclude'>";
                             echo "<form method='POST' action='excluir/excluir_camisa.php'>";
                             echo "<input type='hidden' name='camiseta_id' value='" . $row['camiseta_id'] . "'>";
@@ -199,6 +211,7 @@ if (!isset($_SESSION['usuario_id'])) {
                             echo "</form>";
                             echo "<a class='editar_btn' href='update/update_cami.php?camiseta_id=" . $row['camiseta_id'] . "'>Editar</a>";
                             echo "</div>";
+                            }
                             echo "</div>";
                         }
 
