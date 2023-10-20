@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         $db_password = $row['funcionario_senha'];
-
         $_SESSION["usuario_id"] = $row['funcionario_id'];
 
         // Verifica se a senha fornecida corresponde à senha no banco de dados
@@ -22,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_start();
             $_SESSION['usuario_id'] = $row['funcionario_id'];
             echo "Login bem-sucedido!";
-            header('location:especiais.php');
+            header('location:index.php');
         } else {
             echo "Senha incorreta";
         }
