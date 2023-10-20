@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'conexao.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Suponhamos que você já tenha recebido o nome de usuário e senha do usuário
@@ -17,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $db_password)) {
             // Senha válida, você pode continuar com a autenticação no site
             // Use cURL ou outras bibliotecas para acessar o site
+            $_SESSION['usuario_id'] = $row['funcionario_id'];
             echo "Login bem-sucedido!";
             header('location:especiais.php');
         } else {
@@ -29,6 +31,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo 'Dados não inseridos';
 }
 
-// Fecha a conexão com o banco de dados
-$mysqli->close();
 ?>
