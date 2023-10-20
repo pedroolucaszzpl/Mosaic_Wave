@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $result->fetch_assoc();
         $db_password = $row['funcionario_senha'];
         
+        $_SESSION["usuario_id"] = $row['funcionario_id'];
+
         // Verifica se a senha fornecida corresponde à senha no banco de dados
         if (password_verify($password, $db_password)) {
             // Senha válida, você pode continuar com a autenticação no site
@@ -23,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['permissao'] = 'administrador';
             }
             echo "Login bem-sucedido!";
-            header('location:especiais.php');
+            header('location:index.php');
         } else {
             echo "Senha incorreta";
         }

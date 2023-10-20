@@ -56,6 +56,18 @@
             <div class="buy">
                 <img id="carrinho" src="img/carrinho.png" alt="">
             </div>
+            <?php
+            if (!isset($_SESSION["usuario_id"])) {
+                echo    "<div class='logarConta'>";
+                echo    "<a href='logar.php'>Logar</a>";
+                echo    "</div>";
+             }
+            if (isset($_SESSION["usuario_id"])) {
+                echo    "<div class='logout'>";
+                echo    "<a href='logout.php'>Sair</a>";
+                echo    "</div>";
+            }
+            ?>
             <a class="navbar-logo" href="main.php">
                 <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
             </a>
