@@ -171,6 +171,25 @@ aside {
    padding-left: 5px;
 }
 
+.logout {
+   font-weight: bold;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 70px;
+   height: 40px;
+}
+
+.logout a {
+   text-decoration: none;
+   color: #fff;
+}
+
+.logout:hover {
+   background-color: var(--InGreen);
+   border-radius: 3px;
+}
+
 .logarConta{
    display: flex;
    align-items: center;
