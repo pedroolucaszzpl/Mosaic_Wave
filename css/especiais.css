@@ -140,8 +140,8 @@ aside {
 }
 
 #lupa {
-    width: 6%;
-    padding-right: 10px;
+    width: 30px;
+    padding-right: 20px;
 }
 
 #carrinho {
@@ -152,7 +152,7 @@ aside {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 430px;
+    width: 470px;
     height: 20px;
 }
 
@@ -164,7 +164,7 @@ aside {
 }
 
 .ask {
-    width: 94%;
+    width: 400px;
     height: 100%;
     font-size: 15px;
     padding-left: 5px;
@@ -388,15 +388,17 @@ p.price {
     cursor: pointer;
 }
 
-.editar_btn {
+.exclude a {
     margin-top: 5px;
     background-color: rgb(126, 126, 235);
     border-radius: 5px;
     color: #fff;
     border: none;
     padding: 5px 10px;
+    margin: 5px;
     cursor: pointer;
-}
+    text-decoration: none;
+ }
 
 .exclude {
     display: contents;

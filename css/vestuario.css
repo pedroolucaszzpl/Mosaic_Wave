@@ -153,7 +153,7 @@ aside {
    display: flex;
    align-items: center;
    justify-content: center;
-   width: 530px;
+   width: 430px;
    height: 20px;
 }
 
@@ -165,7 +165,7 @@ aside {
 }
 
 .ask {
-   width: 94%;
+   width: 400px;
    height: 100%;
    font-size: 15px;
    padding-left: 5px;

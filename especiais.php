@@ -39,10 +39,8 @@
                 </span>
                 <menu id="mvertical">
                     <ul>
-                        <li><a href="main.php">Página Inicial</a></li>
-                        <li><a href="main.php">Calçados</a></li>
-                        <li><a href="main.php">Acessórios</a></li>
-                        <li><a href="main.php">Vestuário</a></li>
+                        <li><a href="index.php">Página Inicial</a></li>
+                        <li><a href="modelo.php">Calçados</a></li>
                         <li><a href="especiais.php">Edições Especiais</a></li>
                     </ul>
                 </menu>
@@ -95,7 +93,7 @@
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo "<div class= 'all'>";
-                            echo "<a href='mostruario.php?id=".$row['tenis_id']."'>";
+                            echo "<a href='mostruario.php?id=" . $row['tenis_id'] . "'>";
                             echo "<div class= 'tenisous'>";
                             echo "<img src='" . $row["tenis_img"] . "'>";
                             echo "<p class='name'>" . $row["tenis_modelo"] . "</p>";
@@ -105,11 +103,9 @@
                             echo "<div class='exclude'>";
                             echo "<form method='POST' action='excluir/excluir_calc.php'>";
                             echo "<input type='hidden' name='tenis_id' value='" . $row['tenis_id'] . "'>";
-                            echo "<button class='excluir_btn' type='submit' data-item-id=" . $row['tenis_id'] . ">Excluir</button>";
+                            echo "<button class='excluir_btn' type='submit' onclick='return confirmExclusao()' data-item-id=" . $row['tenis_id'] . ">Excluir</button>";
                             echo "</form>";
-                            echo "<form method='GET' action='editar_calc.php'>";
-                            echo "<button class='editar_btn' href='excluir.php' data-item-id=" . $row['tenis_id'] . ">Editar</button>";
-                            echo "</form>";
+                            echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=" . $row['tenis_id'] . "'>Editar</a>";
                             echo "</div>";
                             echo "</div>";
                         }
@@ -122,6 +118,11 @@
                 }
 
                 ?>
+                <script>
+                    function confirmExclusao() {
+                        return confirm("Tem certeza de que deseja excluir este item?");
+                    }
+                </script>
             </div>
             <div class="secGreen">
                 <form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">
@@ -146,7 +147,7 @@
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo "<div class='all'>";
-                            echo "<a href='mostruario.php?id=".$row['camiseta_id']."'>";
+                            echo "<a href='mostruario.php?id=" . $row['camiseta_id'] . "'>";
                             echo '<div class="camisabaw">';
                             echo "<img src='" . $row["camiseta_img"] . "'>";
                             echo "<p class='name'>" . $row["camiseta_modelo"] . "</p>";
@@ -155,10 +156,10 @@
                             echo "</a>";
                             echo "<div class='exclude'>";
                             echo "<form method='POST' action='excluir/excluir_camisa.php'>";
-                            echo "<input type='hidden' name='tenis_id' value='" . $row['camiseta_id'] . "'>";
+                            echo "<input type='hidden' name='camiseta_id' value='" . $row['camiseta_id'] . "'>";
                             echo "<button class='excluir_btn' data-item-id=" . $row['camiseta_id'] . ">Excluir</button>";
                             echo "</form>";
-                            echo "<button class='editar_btn' href='excluir.php' data-item-id=" . $row['camiseta_id'] . ">Editar</button>";
+                            echo "<a class='editar_btn' href='update/update_cami.php?camiseta_id=" . $row['camiseta_id'] . "'>Editar</a>";
                             echo "</div>";
                             echo "</div>";
                         }
