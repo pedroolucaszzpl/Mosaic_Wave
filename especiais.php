@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION['usuario_id'])){
+ header('Location: logar.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
