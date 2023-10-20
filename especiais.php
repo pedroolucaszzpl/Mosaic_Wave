@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario_id"])) {
+    header('location: logar.php');
+    exit ();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,6 +61,9 @@
             <div class="buy">
                 <img id="carrinho" src="img/carrinho.png" alt="">
             </div>
+            <div class="logout">
+                <a href="logout.php">Sair</a>
+            </div>
             <a class="navbar-logo" href="index.php">
                 <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
             </a>
@@ -83,7 +93,6 @@
             <div class="ous">
                 <?php
                 include 'conexao.php';
-                session_start();
                 // Faça a consulta SQL
                 $sql = "SELECT * FROM tenis WHERE tenis_cat = 'especial' LIMIT 5";
                 $resultado = $mysqli->query($sql); // $mysqli é o objeto da conexão
