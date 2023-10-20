@@ -1,6 +1,8 @@
 <?php
+session_start();
+include 'conexao.php';
 if (!isset($_SESSION['usuario_id'])){
- header('Location: logar.php');
+header('Location: logar.php');
 }
 ?>
 <!DOCTYPE html>
@@ -88,7 +90,6 @@ if (!isset($_SESSION['usuario_id'])){
             <div class="ous">
                 <?php
                 include 'conexao.php';
-                session_start();
                 // Faça a consulta SQL
                 $sql = "SELECT * FROM tenis WHERE tenis_cat = 'especial' LIMIT 5";
                 $resultado = $mysqli->query($sql); // $mysqli é o objeto da conexão
