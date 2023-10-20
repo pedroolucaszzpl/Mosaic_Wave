@@ -20,6 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Use cURL ou outras bibliotecas para acessar o site
             session_start();
             $_SESSION['usuario_id'] = $row['funcionario_id'];
+            if ($row['funcionario_funcao'] === 'administrador') {
+                $_SESSION['permissao'] = 'administrador';
+            }
             echo "Login bem-sucedido!";
             header('location:index.php');
         } else {

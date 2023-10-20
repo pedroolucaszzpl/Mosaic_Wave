@@ -16,6 +16,7 @@ body {
   background-image: url(../img/background.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  height: 100vh;
 }
 
 .container {
@@ -63,6 +64,16 @@ input#nome {
 }
 
 input#email {
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  height: 20px;
+  font-size: 15px;
+  font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+}
+
+.function{
   margin: 10px;
   padding: 10px;
   width: 300px;
