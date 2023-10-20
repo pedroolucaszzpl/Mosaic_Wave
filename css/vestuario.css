@@ -145,6 +145,14 @@ aside {
    width: 40px;
 }
 
+p.user{
+   color: #fff;
+   font-family: "Bauhaus";
+   font-size: 16px;
+   margin: 0 5px;
+   font-weight: bold;
+}
+
 .formss{
    display: flex;
 }

@@ -1,8 +1,8 @@
 <?php
 session_start();
 include 'conexao.php';
-if (!isset($_SESSION['usuario_id'])){
-header('Location: logar.php');
+if (!isset($_SESSION['usuario_id'])) {
+    header('Location: logar.php');
 }
 ?>
 <!DOCTYPE html>
@@ -61,50 +61,43 @@ header('Location: logar.php');
             <div class="buy">
                 <img id="carrinho" src="img/carrinho.png" alt="">
             </div>
-<<<<<<< HEAD
             <?php
             if (!isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logarConta'>";
-                echo    "<a href='logar.php'>Logar</a>";
-                echo    "</div>";
-             }
+                echo "<div class='logarConta'>";
+                echo "<a href='logar.php'>Logar</a>";
+                echo "</div>";
+            }
             if (isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logout'>";
-                echo    "<a href='logout.php'>Sair</a>";
-                echo    "</div>";
+                echo "<div class='logout'>";
+                echo "<a href='logout.php'>Sair</a>";
+                echo "</div>";
             }
             ?>
-=======
-            <div class="logout">
-                <a href="logout.php">Sair</a>
-            </div>
             <div class="nav-username">
                 <!-- Aqui você pode exibir o nome de usuário -->
                 <?php
-                session_start();
                 if (isset($_SESSION['funcionario_nome'])) {
                     echo $_SESSION['funcionario_nome'];
                 } else {
                     // Se o nome de usuário não estiver na sessão, você deve recuperá-lo do banco de dados aqui
                     include 'conexao.php'; // Certifique-se de incluir o arquivo de conexão
-
+                
                     // Faça uma consulta para obter o nome de usuário com base no usuário logado
-
+                
                     // Substitua esta linha pela sua consulta SQL
-                    $sql = "SELECT funcionario_nome FROM sua_tabela WHERE id = seu_id";
-
+                    $sql = "SELECT funcionario_nome FROM funcionario WHERE funcionario_id = {$_SESSION['usuario_id']}";
+                
                     $resultado = $mysqli->query($sql); // Execute a consulta
-
+                
                     if ($resultado && $resultado->num_rows > 0) {
                         $row = $resultado->fetch_assoc();
-                        echo $row['funcionario_nome'];
+                        echo "<p class='user'>" . $row['funcionario_nome'] . "</p>";
                     } else {
                         echo "Nome de usuário não encontrado";
                     }
                 }
                 ?>
             </div>
->>>>>>> 525d18c62fe585319daf1c762179e9fc7885f836
             <a class="navbar-logo" href="index.php">
                 <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
             </a>
@@ -143,7 +136,7 @@ header('Location: logar.php');
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo "<div class= 'all'>";
-                            echo "<a href='mostruario.php?id=".$row['tenis_id']."'>";
+                            echo "<a href='mostruario.php?id=" . $row['tenis_id'] . "'>";
                             echo "<div class= 'tenisous'>";
                             echo "<img src='" . $row["tenis_img"] . "'>";
                             echo "<p class='name'>" . $row["tenis_modelo"] . "</p>";
@@ -155,7 +148,7 @@ header('Location: logar.php');
                             echo "<input type='hidden' name='tenis_id' value='" . $row['tenis_id'] . "'>";
                             echo "<button class='excluir_btn' type='submit' data-item-id=" . $row['tenis_id'] . ">Excluir</button>";
                             echo "</form>";
-                            echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=".$row['tenis_id']."'>Editar</a>";
+                            echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=" . $row['tenis_id'] . "'>Editar</a>";
                             echo "</div>";
                             echo "</div>";
                         }
@@ -192,7 +185,7 @@ header('Location: logar.php');
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo "<div class='all'>";
-                            echo "<a href='mostruario.php?id=".$row['camiseta_id']."'>";
+                            echo "<a href='mostruario.php?id=" . $row['camiseta_id'] . "'>";
                             echo '<div class="camisabaw">';
                             echo "<img src='" . $row["camiseta_img"] . "'>";
                             echo "<p class='name'>" . $row["camiseta_modelo"] . "</p>";
@@ -204,7 +197,7 @@ header('Location: logar.php');
                             echo "<input type='hidden' name='camiseta_id' value='" . $row['camiseta_id'] . "'>";
                             echo "<button class='excluir_btn' data-item-id=" . $row['camiseta_id'] . ">Excluir</button>";
                             echo "</form>";
-                            echo "<a class='editar_btn' href='update/update_cami.php?camiseta_id=".$row['camiseta_id']."'>Editar</a>";
+                            echo "<a class='editar_btn' href='update/update_cami.php?camiseta_id=" . $row['camiseta_id'] . "'>Editar</a>";
                             echo "</div>";
                             echo "</div>";
                         }

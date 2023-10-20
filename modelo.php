@@ -68,6 +68,31 @@ if (!isset($_SESSION["usuario_id"])) {
                 echo    "</div>";
             }
             ?>
+            <div class="nav-username">
+                <!-- Aqui você pode exibir o nome de usuário -->
+                <?php
+                if (isset($_SESSION['funcionario_nome'])) {
+                    echo $_SESSION['funcionario_nome'];
+                } else {
+                    // Se o nome de usuário não estiver na sessão, você deve recuperá-lo do banco de dados aqui
+                    include 'conexao.php'; // Certifique-se de incluir o arquivo de conexão
+                
+                    // Faça uma consulta para obter o nome de usuário com base no usuário logado
+                
+                    // Substitua esta linha pela sua consulta SQL
+                    $sql = "SELECT funcionario_nome FROM funcionario WHERE funcionario_id = {$_SESSION['usuario_id']}";
+                
+                    $resultado = $mysqli->query($sql); // Execute a consulta
+                
+                    if ($resultado && $resultado->num_rows > 0) {
+                        $row = $resultado->fetch_assoc();
+                        echo "<p class='user'>" . $row['funcionario_nome'] . "</p>";
+                    } else {
+                        echo "Nome de usuário não encontrado";
+                    }
+                }
+                ?>
+            </div>
             <a class="navbar-logo" href="index.php">
                 <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
             </a>
