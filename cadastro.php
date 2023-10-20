@@ -27,6 +27,14 @@
                     <label for="senha">Senha:</label></br>
                     <input type="password" id="senha" name="funcionario_senha" required><br>
                 </div>
+
+                <div class="form">
+                    <label for="function">Função:</label>
+                    <select class="function" name="funcionario_funcao" id="funcao">
+                        <option value="cliente">Cliente</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
+                </div>
                 
                 <div id="linhas">
                     <div class="line"></div>
