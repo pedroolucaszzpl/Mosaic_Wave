@@ -19,6 +19,7 @@ session_start();
     <title>IntenseStreet HomePage</title>
 </head>
 
+
 <body>
     <header>
         <nav class="navbar">

@@ -213,7 +213,7 @@ aside {
 }
 
 .excluir_btn {
-   background-color: red;
+   background-color: var(--LightPurple);
    border-radius: 5px;
    color: #fff;
    border: none;
@@ -228,7 +228,7 @@ aside {
 
 .editar_btn {
    margin-top: 5px;
-   background-color: rgb(126, 126, 235);
+   background-color:var(--LightGreen);
    border-radius: 5px;
    color: #fff;
    border: none;
