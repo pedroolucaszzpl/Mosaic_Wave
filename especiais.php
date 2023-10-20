@@ -1,3 +1,10 @@
+<?php
+session_start();
+include 'conexao.php';
+if (!isset($_SESSION['usuario_id'])){
+header('Location: logar.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,6 +61,9 @@
             <div class="buy">
                 <img id="carrinho" src="img/carrinho.png" alt="">
             </div>
+            <div class="logout">
+                <a href="logout.php">Sair</a>
+            </div>
             <div class="nav-username">
                 <!-- Aqui você pode exibir o nome de usuário -->
                 <?php
@@ -109,7 +119,6 @@
             <div class="ous">
                 <?php
                 include 'conexao.php';
-                session_start();
                 // Faça a consulta SQL
                 $sql = "SELECT * FROM tenis WHERE tenis_cat = 'especial' LIMIT 5";
                 $resultado = $mysqli->query($sql); // $mysqli é o objeto da conexão
@@ -119,7 +128,7 @@
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo "<div class= 'all'>";
-                            echo "<a href='mostruario.php?id=" . $row['tenis_id'] . "'>";
+                            echo "<a href='mostruario.php?id=".$row['tenis_id']."'>";
                             echo "<div class= 'tenisous'>";
                             echo "<img src='" . $row["tenis_img"] . "'>";
                             echo "<p class='name'>" . $row["tenis_modelo"] . "</p>";
@@ -129,9 +138,9 @@
                             echo "<div class='exclude'>";
                             echo "<form method='POST' action='excluir/excluir_calc.php'>";
                             echo "<input type='hidden' name='tenis_id' value='" . $row['tenis_id'] . "'>";
-                            echo "<button class='excluir_btn' type='submit' onclick='return confirmExclusao()' data-item-id=" . $row['tenis_id'] . ">Excluir</button>";
+                            echo "<button class='excluir_btn' type='submit' data-item-id=" . $row['tenis_id'] . ">Excluir</button>";
                             echo "</form>";
-                            echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=" . $row['tenis_id'] . "'>Editar</a>";
+                            echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=".$row['tenis_id']."'>Editar</a>";
                             echo "</div>";
                             echo "</div>";
                         }
@@ -144,11 +153,6 @@
                 }
 
                 ?>
-                <script>
-                    function confirmExclusao() {
-                        return confirm("Tem certeza de que deseja excluir este item?");
-                    }
-                </script>
             </div>
             <div class="secGreen">
                 <form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">
@@ -173,7 +177,7 @@
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo "<div class='all'>";
-                            echo "<a href='mostruario.php?id=" . $row['camiseta_id'] . "'>";
+                            echo "<a href='mostruario.php?id=".$row['camiseta_id']."'>";
                             echo '<div class="camisabaw">';
                             echo "<img src='" . $row["camiseta_img"] . "'>";
                             echo "<p class='name'>" . $row["camiseta_modelo"] . "</p>";
@@ -185,7 +189,7 @@
                             echo "<input type='hidden' name='camiseta_id' value='" . $row['camiseta_id'] . "'>";
                             echo "<button class='excluir_btn' data-item-id=" . $row['camiseta_id'] . ">Excluir</button>";
                             echo "</form>";
-                            echo "<a class='editar_btn' href='update/update_cami.php?camiseta_id=" . $row['camiseta_id'] . "'>Editar</a>";
+                            echo "<a class='editar_btn' href='update/update_cami.php?camiseta_id=".$row['camiseta_id']."'>Editar</a>";
                             echo "</div>";
                             echo "</div>";
                         }

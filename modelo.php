@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario_id"])) {
+    header('location: logar.php');
+    exit ();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +55,9 @@
             </div>
             <div class="buy">
                 <img id="carrinho" src="img/carrinho.png" alt="">
+            </div>
+            <div class="logout">
+                <a href="logout.php">Sair</a>
             </div>
             <a class="navbar-logo" href="index.php">
                 <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
