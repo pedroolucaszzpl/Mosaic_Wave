@@ -380,7 +380,7 @@ p.price {
 }
 
 .excluir_btn {
-    background-color: red;
+    background-color: var(--LightPurple);
     border-radius: 5px;
     color: #fff;
     border: none;
