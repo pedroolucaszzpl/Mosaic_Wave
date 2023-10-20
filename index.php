@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION["usuario_id"])) {
-    header('location: logar.php');
-    exit ();
-}
+// if (!isset($_SESSION["usuario_id"])) {
+//     header('location: logar.php');
+//     exit ();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,12 +59,18 @@ if (!isset($_SESSION["usuario_id"])) {
             <div class="buy">
                 <img id="carrinho" src="img/carrinho.png" alt="">
             </div>
-            <div class="logarConta">
-                <a href="logar.php">Logar</a>
-            </div>
-            <div class="logout">
-                <a href="logout.php">Sair</a>
-            </div>
+            <?php
+            if (!isset($_SESSION["usuario_id"])) {
+                echo    "<div class='logarConta'>";
+                echo    "<a href='logar.php'>Logar</a>";
+                echo    "</div>";
+             }
+            if (isset($_SESSION["usuario_id"])) {
+                echo    "<div class='logout'>";
+                echo    "<a href='logout.php'>Sair</a>";
+                echo    "</div>";
+            }
+            ?>
             <a class="navbar-logo" href="index.php">
                 <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
             </a>

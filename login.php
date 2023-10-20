@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Use cURL ou outras bibliotecas para acessar o site
             $_SESSION['usuario_id'] = $row['funcionario_id'];
             echo "Login bem-sucedido!";
-            header('location:especiais.php');
+            header('location:index.php');
         } else {
             echo "Senha incorreta";
         }
