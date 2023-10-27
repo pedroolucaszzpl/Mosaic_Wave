@@ -15,8 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "INSERT INTO camisetas (camiseta_img , camiseta_modelo , camiseta_marca , camiseta_desc ,camiseta_preco , camiseta_cor , camiseta_tamanho, camiseta_cat) VALUES ('$url_imagem','$nome','$marca','$descricao','$preco', '$cor', '$tamanho', '$categoria')";
 
         if ($mysqli->query($sql)) {
-            header("Location: ../especiais.php"); // Redireciona para a página de sucesso
-            exit(); // Certifique-se de encerrar o script após o redirecionamento
+            $referer = $_POST['referer'];
+            header("Location: " . $referer); // Redireciona de volta à página anterior
+            exit();
         } else {
             die("Erro na inserção: " . $mysqli->error);
         }

@@ -167,6 +167,8 @@ if (!isset($_SESSION['usuario_id'])) {
                 }
 
                 ?>
+
+                
             </div>
             <div class="secGreen">
 
@@ -261,6 +263,23 @@ if (!isset($_SESSION['usuario_id'])) {
         </footer>
     </div>
     <script src="js/main.js"></script>
+    <script>
+// Adicione este script no final do seu arquivo PHP, antes do fechamento da tag </body>
+document.addEventListener('DOMContentLoaded', function () {
+    const excluirBtns = document.querySelectorAll('.excluir_btn');
+
+    excluirBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault(); // Impede o envio do formulário automaticamente
+
+            if (confirm('Tem certeza que deseja excluir o item?')) {
+                // Se o usuário confirmar, envie o formulário
+                btn.closest('form').submit();
+            }
+        });
+    });
+});
+</script>
 </body>
 
 </html>

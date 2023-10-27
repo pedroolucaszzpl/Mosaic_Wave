@@ -10,8 +10,10 @@ if (isset($_POST['vestuario_id'])) {
     $sql = "DELETE FROM vestuario WHERE vestuario_id = $item_id";
 
     if ($mysqli->query($sql)) {
+        
         // Item excluído com sucesso
-        echo "Item excluído com sucesso. <a href='modelo.php'>Voltar</a>";
+        header("Location: ../modelo.php"); // Redireciona para a página de sucesso
+            exit(); // Certifique-se de encerrar o script após o redirecionamento
     } else {
         // Erro ao excluir o item
         echo "Erro ao excluir o item: " . $mysqli->error;

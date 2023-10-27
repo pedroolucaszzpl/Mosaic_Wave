@@ -123,8 +123,13 @@ if (!isset($_SESSION["usuario_id"])) {
                             echo "<img src='" . $row["vestuario_img"] . "'>";
                             echo "<p class='desc'>" . $row["vestuario_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["vestuario_preco"] . "</p>";
-                            echo "<a class='excluir_btn' href='excluir_vest.php?vestuario_id=".$row['vestuario_id']."'>Excluir</a>";
-                            echo "<a class='editar_btn' href='update/update_vest.php?vestuario_id=".$row['vestuario_id']."'>Editar</a>";
+                            if (isset($_SESSION['permissao'])) {
+                                echo "<form method='POST' action='excluir/excluir_vest.php'>";
+                                echo "<input type='hidden' name='vestuario_id' value='" . $row['vestuario_id'] . "'>";
+                                echo "<button class='excluir_btn' data-item-id=" . $row['vestuario_id'] . ">Excluir</button>";
+                                echo "</form>";
+                                echo "<a class='editar_btn' href='update/update_vest.php?vestuario_id=" . $row['vestuario_id'] . "'>Editar</a>";
+                                }
                             echo "</div>";
 
                         }
@@ -162,8 +167,13 @@ if (!isset($_SESSION["usuario_id"])) {
                             echo "<img src='" . $row["acessorio_img"] . "'>";
                             echo "<p class='desc'>" . $row["acessorio_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["acessorio_preco"] . "</p>";
-                            echo "<a class='excluir_btn' href='excluir_aces.php?acessorio_id=".$row['acessorio_id']."'>Excluir</a>";
-                            echo "<a class='editar_btn' href='update/update_aces.php?acessorio_id=".$row['acessorio_id']."'>Editar</a>";
+                            if (isset($_SESSION['permissao'])) {
+                                echo "<form method='POST' action='excluir/excluir_aces.php'>";
+                                echo "<input type='hidden' name='acessorio_id' value='" . $row['acessorio_id'] . "'>";
+                                echo "<button class='excluir_btn' data-item-id=" . $row['acessorio_id'] . ">Excluir</button>";
+                                echo "</form>";
+                                echo "<a class='editar_btn' href='update/update_aces.php?acessorio_id=" . $row['acessorio_id'] . "'>Editar</a>";
+                                }
                             echo "</div>";
 
                         }
@@ -264,6 +274,23 @@ if (!isset($_SESSION["usuario_id"])) {
             </div>
         </footer>
     </div>
+    <script>
+// Adicione este script no final do seu arquivo PHP, antes do fechamento da tag </body>
+document.addEventListener('DOMContentLoaded', function () {
+    const excluirBtns = document.querySelectorAll('.excluir_btn');
+
+    excluirBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault(); // Impede o envio do formulário automaticamente
+
+            if (confirm('Tem certeza que deseja excluir o item?')) {
+                // Se o usuário confirmar, envie o formulário
+                btn.closest('form').submit();
+            }
+        });
+    });
+});
+</script>
     <script src="js/main.js" defer></script>
 </body>
 </html>
