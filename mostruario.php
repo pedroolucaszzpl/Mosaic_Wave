@@ -54,7 +54,7 @@
                 </form>
             </div>
             <div class="buy">
-                <img id="carrinho" src="img/carrinho.png" alt="">
+                <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
             </div>
             <?php
             if (!isset($_SESSION["usuario_id"])) {
@@ -119,8 +119,8 @@
                     echo "</select>";
                     echo "</div>";
                     echo "<div class='botoes-mostruario'>";
-                    echo "<button id='botao-add'>COMPRAR AGORA</button>";
-                    echo "<button id='botao-add'>ADICIONAR AO CARRINHO</button>";
+                    echo "<button id='botao-add' onclick='addToCart(". $row["tenis_modelo"] .", ". $row["tenis_preco"] .")'>COMPRAR AGORA</button>";
+                    echo "<button id='botao-add' onclick='addToCart(". $row["tenis_modelo"] .", ". $row["tenis_preco"] .")'>ADICIONAR AO CARRINHO </button>";
                     echo "</div>";
                     echo "</div>";
                     echo "</div>";
