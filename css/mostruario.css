@@ -320,6 +320,7 @@ p.price {
 }
 
 @media screen and (min-width: 751px) and (max-width:1000px) {
+    
     #menu_vertical {
         display: block;
     }
@@ -351,7 +352,9 @@ p.price {
     #carrinho {
         display: none;
     }
-
+    .desc_produto{
+        flex-direction: column;
+    }
 }
 /*main*/
 
@@ -586,6 +589,32 @@ border-radius: 10px;
 
     .slidesec {
         display: flex;
+    }
+
+    .desc_produto{
+        flex-direction: column;
+    }
+    .principal {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 150px;
+        display: contents;
+    }
+
+    .principal img {
+        width: 300px;
+        height: 300px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .descricao {
+        width: 300px;
+    }
+
+    #botao-add {
+        width: 200px;
     }
 }
 

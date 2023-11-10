@@ -145,7 +145,7 @@ aside {
    width: 40px;
 }
 
-p.user{
+.nav-username{
    color: #fff;
    font-family: "Bauhaus";
    font-size: 16px;
@@ -196,6 +196,11 @@ p.user{
 .logout:hover {
    background-color: var(--InGreen);
    border-radius: 3px;
+}
+
+.logout a:hover{
+   text-decoration: none;
+   color: #fff;
 }
 
 .logarConta{

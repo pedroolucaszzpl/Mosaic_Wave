@@ -198,7 +198,7 @@ if (!isset($_SESSION['usuario_id'])) {
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo "<div class='all'>";
-                            echo "<a href='mostruario.php?id=" . $row['camiseta_id'] . "'>";
+                            echo "<a href='mostruario_camiseta.php?id=" . $row['camiseta_id'] . "'>";
                             echo '<div class="camisabaw">';
                             echo "<img src='" . $row["camiseta_img"] . "'>";
                             echo "<p class='name'>" . $row["camiseta_modelo"] . "</p>";

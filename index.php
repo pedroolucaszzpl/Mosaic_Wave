@@ -1,9 +1,9 @@
 <?php
 session_start();
-// if (!isset($_SESSION["usuario_id"])) {
-//     header('location: logar.php');
-//     exit ();
-// }
+if (!isset($_SESSION["usuario_id"])) {
+     header('location: logar.php');
+     exit ();
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
