@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['permissao'] = 'administrador';
             }
             echo "Login bem-sucedido!";
-            header('location:especiais.php');
+            header('location:index.php');
         } else {
             echo "Senha incorreta";
         }
