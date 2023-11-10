@@ -509,6 +509,9 @@ button {
     .slidesec {
         display: flex;
     }
+    .ask{
+        width: 150px;
+    }
 }
 
 @media screen and (min-width: 750px) and (max-width:1000px) {

@@ -3,22 +3,25 @@ session_start();
 include 'conexao.php';
 if (!isset($_SESSION["usuario_id"])) {
     header('location: logar.php');
-    exit ();
+    exit();
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/vestuario.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /><!--Google Link Icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!--Google Link Icon-->
     <title>IntenseStreet HomePage</title>
 </head>
+
 <body>
-<header>
+    <header>
         <nav class="navbar">
             <div class="contentHead">
                 <div class="navbar-menu">
@@ -29,7 +32,7 @@ if (!isset($_SESSION["usuario_id"])) {
                         <li><select name="departamentos" id="departamentos" onchange="redirectToPage(this)">
                                 <option value="" disabled selected hidden>Departamentos</option>
                                 <option value="vestuario">Vestuário</option>
-                               <option value="especial">Edições Especiais</option>
+                                <option value="especial">Edições Especiais</option>
 
                             </select>
                         </li>
@@ -59,14 +62,14 @@ if (!isset($_SESSION["usuario_id"])) {
             </div>
             <?php
             if (!isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logarConta'>";
-                echo    "<a href='logar.php'>Logar</a>";
-                echo    "</div>";
-             }
+                echo "<div class='logarConta'>";
+                echo "<a href='logar.php'>Logar</a>";
+                echo "</div>";
+            }
             if (isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logout'>";
-                echo    "<a href='logout.php'>Sair</a>";
-                echo    "</div>";
+                echo "<div class='logout'>";
+                echo "<a href='logout.php'>Sair</a>";
+                echo "</div>";
             }
             ?>
             <div class="nav-username">
@@ -82,7 +85,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 
                     // Substitua esta linha pela sua consulta SQL
                     $sql = "SELECT funcionario_nome FROM funcionario WHERE funcionario_id = {$_SESSION['usuario_id']}";
-                
+
                     $resultado = $mysqli->query($sql); // Execute a consulta
                 
                     if ($resultado && $resultado->num_rows > 0) {
@@ -109,10 +112,10 @@ if (!isset($_SESSION["usuario_id"])) {
                 </div>
             </div>
             <div class="clothes">
-            <?php
+                <?php
                 include 'conexao.php';
                 // Faça a consulta SQL
-                $sql = "SELECT * FROM vestuario WHERE vestuario_cat = 'normal' LIMIT 4" ;
+                $sql = "SELECT * FROM vestuario WHERE vestuario_cat = 'normal' LIMIT 4";
                 $resultado = $mysqli->query($sql); // $mysqli é o objeto da conexão
                 
                 // Verifique se a consulta foi bem-sucedida
@@ -120,16 +123,18 @@ if (!isset($_SESSION["usuario_id"])) {
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo '<div class="sweater">';
+                            echo "<a href='mostruario_vestuario.php?id=" . $row['vestuario_id'] . "'>";
                             echo "<img src='" . $row["vestuario_img"] . "'>";
                             echo "<p class='desc'>" . $row["vestuario_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["vestuario_preco"] . "</p>";
+                            echo "</a>";
                             if (isset($_SESSION['permissao'])) {
                                 echo "<form method='POST' action='excluir/excluir_vest.php'>";
                                 echo "<input type='hidden' name='vestuario_id' value='" . $row['vestuario_id'] . "'>";
                                 echo "<button class='excluir_btn' data-item-id=" . $row['vestuario_id'] . ">Excluir</button>";
                                 echo "</form>";
                                 echo "<a class='editar_btn' href='update/update_vest.php?vestuario_id=" . $row['vestuario_id'] . "'>Editar</a>";
-                                }
+                            }
                             echo "</div>";
 
                         }
@@ -140,7 +145,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 } else {
                     die("Erro na consulta: " . $mysqli->error);
                 }
-               
+
                 ?>
             </div>
         </div>
@@ -153,7 +158,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 </div>
             </div>
             <div class="clothes">
-            <?php
+                <?php
                 include 'conexao.php';
                 // Faça a consulta SQL
                 $sql = "SELECT * FROM acessorios WHERE acessorio_cat = 'normal' LIMIT 4";
@@ -164,16 +169,18 @@ if (!isset($_SESSION["usuario_id"])) {
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo '<div class="sweater">';
+                            echo "<a href='mostruario_acessorio.php?id=" . $row['acessorio_id'] . "'>";
                             echo "<img src='" . $row["acessorio_img"] . "'>";
                             echo "<p class='desc'>" . $row["acessorio_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["acessorio_preco"] . "</p>";
+                            echo "</a>";
                             if (isset($_SESSION['permissao'])) {
                                 echo "<form method='POST' action='excluir/excluir_aces.php'>";
                                 echo "<input type='hidden' name='acessorio_id' value='" . $row['acessorio_id'] . "'>";
                                 echo "<button class='excluir_btn' data-item-id=" . $row['acessorio_id'] . ">Excluir</button>";
                                 echo "</form>";
                                 echo "<a class='editar_btn' href='update/update_aces.php?acessorio_id=" . $row['acessorio_id'] . "'>Editar</a>";
-                                }
+                            }
                             echo "</div>";
 
                         }
@@ -184,7 +191,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 } else {
                     die("Erro na consulta: " . $mysqli->error);
                 }
-               
+
                 ?>
                 <div class="sweater">
                 </div>
@@ -203,7 +210,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 </div>
             </div>
             <div class="clothes">
-            <?php
+                <?php
                 include 'conexao.php';
                 // Faça a consulta SQL
                 $sql = "SELECT * FROM tenis WHERE tenis_cat = 'normal' LIMIT 4";
@@ -214,11 +221,15 @@ if (!isset($_SESSION["usuario_id"])) {
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo '<div class="sweater">';
+                            echo "<a href='mostruario.php?id=" . $row['tenis_id'] . "'>";
                             echo "<img src='" . $row["tenis_img"] . "'>";
                             echo "<p class='desc'>" . $row["tenis_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["tenis_preco"] . "</p>";
-                            echo "<a class='excluir_btn' href='excluir_calc.php?tenis_id=".$row['tenis_id']."'>Excluir</a>";
-                            echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=".$row['tenis_id']."'>Editar</a>";
+                            echo "</a>";
+                            if (isset($_SESSION['permissao'])) {
+                                echo "<a class='excluir_btn' href='excluir_calc.php?tenis_id=" . $row['tenis_id'] . "'>Excluir</a>";
+                                echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=" . $row['tenis_id'] . "'>Editar</a>";
+                            }
                             echo "</div>";
 
                         }
@@ -231,13 +242,13 @@ if (!isset($_SESSION["usuario_id"])) {
                 }
                 ?>
                 <div class="sweater">
-                   
+
                 </div>
                 <div class="shirt">
-                    
+
                 </div>
                 <div class="sweater">
-                   
+
                 </div>
             </div>
         </div>
@@ -275,22 +286,23 @@ if (!isset($_SESSION["usuario_id"])) {
         </footer>
     </div>
     <script>
-// Adicione este script no final do seu arquivo PHP, antes do fechamento da tag </body>
-document.addEventListener('DOMContentLoaded', function () {
-    const excluirBtns = document.querySelectorAll('.excluir_btn');
+        // Adicione este script no final do seu arquivo PHP, antes do fechamento da tag </body>
+        document.addEventListener('DOMContentLoaded', function () {
+            const excluirBtns = document.querySelectorAll('.excluir_btn');
 
-    excluirBtns.forEach(function (btn) {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault(); // Impede o envio do formulário automaticamente
+            excluirBtns.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault(); // Impede o envio do formulário automaticamente
 
-            if (confirm('Tem certeza que deseja excluir o item?')) {
-                // Se o usuário confirmar, envie o formulário
-                btn.closest('form').submit();
-            }
+                    if (confirm('Tem certeza que deseja excluir o item?')) {
+                        // Se o usuário confirmar, envie o formulário
+                        btn.closest('form').submit();
+                    }
+                });
+            });
         });
-    });
-});
-</script>
+    </script>
     <script src="js/main.js" defer></script>
 </body>
+
 </html>
