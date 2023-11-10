@@ -20,6 +20,11 @@ body {
     height: 100%;
 }
 
+#lupa {
+    width: 30px;
+    padding-right: 20px;
+}
+
 .formss{
     display: flex;
  }
