@@ -144,6 +144,14 @@ aside {
     color: #bababa;
 }
 
+p.user{
+    color: #fff;
+    font-family: "Bauhaus";
+    font-size: 16px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
 #departamentos {
     border: none;
     background-color: var(--black);
