@@ -34,87 +34,65 @@ if (!isset($_SESSION["usuario_id"])) {
                                 <option value="vestuario">Vestuário</option>
                                 <option value="especial">Edições Especiais</option>
 
-                            </select>
-                        </li>
-                    </ul>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div id="menu_vertical">
-                <span id="icon" class="material-symbols-outlined" onclick="clickMenu()">
-                    menu
-                </span>
-                <menu id="mvertical">
-                    <ul>
-                        <li><a href="index.php">Página Inicial</a></li>
-                        <li><a href="modelo.php">Calçados</a></li>
-                        <li><a href="especiais.php">Edições Especiais</a></li>
-                    </ul>
-                </menu>
-            </div>
-            <div class="search">
-                <form class="formss" action="pesquisa.php" method="post">
-                    <input type="image" id="lupa" src="img/lupa.png" alt="lupa">
-                    <input name='termo' type="text" placeholder=" O que você precisa?" class="ask">
-                </form>
-            </div>
-            <div class="buy">
-                 <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
-            </div>
-            <?php
-            if (!isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logarConta'>";
-                echo    "<a href='logar.php'>Logar</a>";
-                echo    "</div>";
-             }
-            if (isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logout'>";
-                echo    "<a href='logout.php'>Sair</a>";
-                echo    "</div>";
-            }
-            ?>
-             <div class="nav-username">
-                <!-- Aqui você pode exibir o nome de usuário -->
+                <div id="menu_vertical">
+                    <span id="icon" class="material-symbols-outlined" onclick="clickMenu()">
+                        menu
+                    </span>
+                    <menu id="mvertical">
+                        <ul>
+                            <li><a href="main.php">Página Inicial</a></li>
+                            <li><a href="main.php">Calçados</a></li>
+                            <li><a href="main.php">Acessórios</a></li>
+                            <li><a href="main.php">Vestuário</a></li>
+                            <li><a href="especiais.php">Edições Especiais</a></li>
+                        </ul>
+                    </menu>
+                </div>
+                <div class="search">
+                    <form class="formss" action="pesquisa.php" method="post">
+                        <input type="image" id="lupa" src="img/lupa.png" alt="lupa">
+                        <input name='termo' type="text" placeholder=" O que você precisa?" class="ask">
+                    </form>
+                </div>
+                <div class="buy">
+                    <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
+                </div>
                 <?php
-                if (isset($_SESSION['funcionario_nome'])) {
-                    echo $_SESSION['funcionario_nome'];
-                } else {
-                    // Se o nome de usuário não estiver na sessão, você deve recuperá-lo do banco de dados aqui
-                    include 'conexao.php'; // Certifique-se de incluir o arquivo de conexão
-                
-                    // Faça uma consulta para obter o nome de usuário com base no usuário logado
-                
-                    // Substitua esta linha pela sua consulta SQL
-                    $sql = "SELECT funcionario_nome FROM funcionario WHERE funcionario_id = {$_SESSION['usuario_id']}";
-                
-                    $resultado = $mysqli->query($sql); // Execute a consulta
-                
-                    if ($resultado && $resultado->num_rows > 0) {
-                        $row = $resultado->fetch_assoc();
-                        echo "<p class='user'>" . $row['funcionario_nome'] . "</p>";
-                    } else {
-                        echo "Nome de usuário não encontrado";
-                    }
+                if (!isset($_SESSION["usuario_id"])) {
+                    echo    "<div class='logarConta'>";
+                    echo    "<a href='logar.php'>Logar</a>";
+                    echo    "</div>";
+                }
+                if (isset($_SESSION["usuario_id"])) {
+                    echo    "<div class='logout'>";
+                    echo    "<a href='logout.php'>Sair</a>";
+                    echo    "</div>";
                 }
                 ?>
+            
+                <a class="navbar-logo" href="main.php">
+                    <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
+                </a>
+            </nav>
+        </header>
+        <main>
+            <div class="barra">
+                <div id="linhas">
+                    <div class="line"></div>
+                    <p class="pag">DESCRIÇÃO</p>
+                    <div class="line"></div>
+                </div>
             </div>
-            <a class="navbar-logo" href="index.php">
-                <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
-            </a>
-        </nav>
-    </header>
-    <main>
-        <div class="barra">
-            <div id="linhas">
-                <div class="line"></div>
-                <p class="pag">DESCRIÇÃO</p>
-                <div class="line"></div>
-            </div>
-        </div>
-            <?php
-            include 'conexao.php';
-            $tenis_id = $_GET['id'];
-            $sql = "SELECT * FROM tenis WHERE tenis_id = '$tenis_id'";
-            $resultado = $mysqli->query($sql);
+                <?php
+                include 'conexao.php';
+                $tenis_id = $_GET['id'];
+                $sql = "SELECT * FROM tenis WHERE tenis_id = '$tenis_id'";
+                $resultado = $mysqli->query($sql);
 
             if ($resultado) {
                 //          if ($resultado->num_rows() > 0) {
@@ -147,8 +125,8 @@ if (!isset($_SESSION["usuario_id"])) {
                     echo "</select>";
                     echo "</div>";
                     echo "<div class='botoes-mostruario'>";
-                    echo "<button id='botao-add'>COMPRAR AGORA</button>";
-                    echo "<button id='botao-add'>ADICIONAR AO CARRINHO</button>";
+                    echo "<button id='botao-add' onclick='addToCart(". $row["tenis_modelo"] .", ". $row["tenis_preco"] .")'>COMPRAR AGORA</button>";
+                    echo "<button id='botao-add' onclick='addToCart(". $row["tenis_modelo"] .", ". $row["tenis_preco"] .")'>ADICIONAR AO CARRINHO </button>";
                     echo "</div>";
                     echo "</div>";
                     echo "</div>";
@@ -193,4 +171,4 @@ if (!isset($_SESSION["usuario_id"])) {
     <script src="js/main.js" defer></script>
 </body>
 
-</html>
+    </html>

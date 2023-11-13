@@ -78,6 +78,179 @@ body {
 
 /*cabeçalho*/
 
+<<<<<<< HEAD
+=======
+#icon:hover {
+    color: #bababa;
+}
+
+#menu_vertical a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.formss{
+    display: flex;
+ }
+
+#menu_vertical li {
+    list-style-type: none;
+}
+
+#menu_vertical {
+    display: none;
+}
+
+aside {
+    display: none;
+}
+
+@font-face {
+    font-family: "Bauhaus";
+    src: url(/Bauhaus\ Font\ Family/);
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 0 5px 0;
+    background-color: var(--black) !important;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-menu ul{
+    align-items: center;
+}
+
+.navbar-menu li {
+    flex-direction: row;
+    display: flex;
+}
+
+.navbar-logo {
+    align-items: center;
+    padding: 5px 0 5px 0;
+    width: 100px;
+}
+
+.content {
+    display: flex;
+}
+
+#logo1 {
+    width: 100%;
+}
+
+.navbar-items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-items-menu {
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link {
+    font-size: 20px;
+    color: var(--white);
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    font-family: "Gotham";
+}
+
+.nav-link:hover {
+    color: #bababa;
+}
+
+p.user{
+    color: #fff;
+    font-family: "Bauhaus";
+    font-size: 16px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+#departamentos {
+    border: none;
+    background-color: var(--black);
+    font-size: 20px;
+    color: var(--white);
+    font-family: "Gotham";
+    padding-left: 20px;
+}
+
+#departamentos:hover {
+    color: #bababa;
+}
+
+#lupa {
+    width: 30px;
+    padding-right: 20px;
+}
+
+
+#carrinho {
+    width: 40px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 530px;
+    height: 20px;
+}
+
+.buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.ask {
+    width: 94%;
+    height: 100%;
+    font-size: 15px;
+    font-family: "Gotham";
+    padding-left: 5px;
+}
+
+.logarConta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 40px;
+}
+.logarConta a{
+    text-decoration: none;
+    color: #fff;
+    font-family: "Gotham";
+}
+.logarConta:hover{
+    background-color: var(--InGreen);
+    border-radius: 3px;
+}
+>>>>>>> ac208c1881ee92a1c0f856b47f6ef8e03a560a0a
 
 .descricao {
     width: 400px; /* Define a largura máxima da descrição do produto */
