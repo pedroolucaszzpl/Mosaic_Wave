@@ -1,16 +1,24 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario_id"])) {
+     header('location: logar.php');
+     exit ();
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/mostruario.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <!--Google Link Icon-->
-    <title>IntenseStreet Calçados</title>
+    <link rel="stylesheet" href="css/teste.css">
+    <title>IntenseStreet Mostruario Acessorio</title>
 </head>
+
 
 <body>
     <header>
@@ -19,12 +27,10 @@
                 <div class="navbar-menu">
                     <ul class="navbar-items">
                         <li class="navbar-items-menu">
-                            <a class="nav-link" href="main.php" onclick="">Páginal Inicial</a>
+                            <a class="nav-link" href="index.php" onclick="">Páginal Inicial</a>
                         </li>
                         <li><select name="departamentos" id="departamentos" onchange="redirectToPage(this)">
                                 <option value="" disabled selected hidden>Departamentos</option>
-                                <option value="calcados">Calçados</option>
-                                <option value="acessorios">Acessórios</option>
                                 <option value="vestuario">Vestuário</option>
                                 <option value="especial">Edições Especiais</option>
 
@@ -39,10 +45,8 @@
                 </span>
                 <menu id="mvertical">
                     <ul>
-                        <li><a href="main.php">Página Inicial</a></li>
-                        <li><a href="main.php">Calçados</a></li>
-                        <li><a href="main.php">Acessórios</a></li>
-                        <li><a href="main.php">Vestuário</a></li>
+                        <li><a href="index.php">Página Inicial</a></li>
+                        <li><a href="modelo.php">Calçados</a></li>
                         <li><a href="especiais.php">Edições Especiais</a></li>
                     </ul>
                 </menu>
@@ -54,7 +58,7 @@
                 </form>
             </div>
             <div class="buy">
-                <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
+                 <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
             </div>
             <?php
             if (!isset($_SESSION["usuario_id"])) {
@@ -68,7 +72,32 @@
                 echo    "</div>";
             }
             ?>
-            <a class="navbar-logo" href="main.php">
+             <div class="nav-username">
+                <!-- Aqui você pode exibir o nome de usuário -->
+                <?php
+                if (isset($_SESSION['funcionario_nome'])) {
+                    echo $_SESSION['funcionario_nome'];
+                } else {
+                    // Se o nome de usuário não estiver na sessão, você deve recuperá-lo do banco de dados aqui
+                    include 'conexao.php'; // Certifique-se de incluir o arquivo de conexão
+                
+                    // Faça uma consulta para obter o nome de usuário com base no usuário logado
+                
+                    // Substitua esta linha pela sua consulta SQL
+                    $sql = "SELECT funcionario_nome FROM funcionario WHERE funcionario_id = {$_SESSION['usuario_id']}";
+                
+                    $resultado = $mysqli->query($sql); // Execute a consulta
+                
+                    if ($resultado && $resultado->num_rows > 0) {
+                        $row = $resultado->fetch_assoc();
+                        echo "<p class='user'>" . $row['funcionario_nome'] . "</p>";
+                    } else {
+                        echo "Nome de usuário não encontrado";
+                    }
+                }
+                ?>
+            </div>
+            <a class="navbar-logo" href="index.php">
                 <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
             </a>
         </nav>
@@ -82,7 +111,6 @@
             </div>
         </div>
             <?php
-            session_start();
             include 'conexao.php';
             $vestuario_id = $_GET['id'];
             $sql = "SELECT * FROM vestuario WHERE vestuario_id = '$vestuario_id'";

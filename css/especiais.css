@@ -263,13 +263,11 @@ div#linhas {
 .add {
     border-radius: 5px;
     background-color: #00FF00;
-    width: 25px;
+    width: 80px;
     height: 25px;
     display: flex;
     justify-content: center;
     margin: 5px 10px 5px 0;
-
-
 }
 
 .add:hover {
@@ -346,10 +344,6 @@ p.name {
     color: #211B15;
 }
 
-p.name:hover{
-    color: #828282;
-}
-
 p.price {
     font-family: "Bauhaus";
     font-size: 22px;
@@ -357,9 +351,6 @@ p.price {
     color: #211B15;
 }
 
-p.price:hover{
-    color: #828282;
-}
 
 .secGreen {
     display: flex;
@@ -367,6 +358,20 @@ p.price:hover{
     height: 35px;
     background-color: #00ff00;
     justify-content: end;
+}
+
+.linhazinha {
+    width: 70%; /* ou qualquer valor que você desejar */
+    border: 0.5px solid  #fff; /* ou qualquer estilo de borda desejado */
+    margin: 1px auto; /* centraliza a linha */
+}
+
+.all:hover p{
+    color: #5c5c5c; 
+}
+
+.all:hover .linhazinha{
+    border:0.5px solid #211B15;
 }
 
 .camibaw {
@@ -425,6 +430,10 @@ p.price:hover{
     cursor: pointer;
 }
 
+.excluir_btn:hover {
+    background-color: #643cb3;
+}
+
 .exclude a {
     margin-top: 5px;
     background-color: rgb(126, 126, 235);
@@ -435,6 +444,10 @@ p.price:hover{
     margin: 5px;
     cursor: pointer;
     text-decoration: none;
+ }
+
+ .exclude a:hover {
+    background-color: #483174;
  }
 
 .exclude {
