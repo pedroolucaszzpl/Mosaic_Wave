@@ -54,7 +54,7 @@
                     </form>
                 </div>
                 <div class="buy">
-                    <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
+                    <a href=""><input type="image" id="carrinho" src="img/carrinho.png" alt="" onclick="abrirModalCarrinho()">
                 </div>
                 <?php
                 if (!isset($_SESSION["usuario_id"])) {
@@ -120,7 +120,7 @@
                         echo "</div>";
                         echo "<div class='botoes-mostruario'>";
                         echo "<button id='botao-add' onclick='addToCart(". $row["tenis_modelo"] .")'>COMPRAR AGORA</button>";
-                        echo "<button id='botao-add' onclick='showCarrinhoModal(". $row["tenis_modelo"] .")'>ADICIONAR AO CARRINHO</button>";                     
+                        echo "<input type='button' value='Adicionar ao carrinho' id='botao-add' data-nome=". $row['tenis_modelo'] ." data-preco=". $row['tenis_preco']." data-imagem=". $row["tenis_img"].">";                     
                         echo "</div>";
                         echo "</div>";
                         echo "</div>";
@@ -161,36 +161,11 @@
                 </div>
             </footer>
         </div>
-        <!-- Adicione esta parte ao seu HTML, geralmente no final do corpo -->
-        <div class="modal" id="carrinhoModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Item Adicionado ao Carrinho</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Aqui você pode adicionar o conteúdo do seu modal -->
-                        <p>Produto adicionado ao carrinho com sucesso!</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
         <script src="js/homep.js" async></script>
         <script src="js/main.js" defer></script>
-        <!-- Adicione esta parte ao seu HTML, geralmente antes do fechamento do corpo -->
-        <script>
-            function showCarrinhoModal() {
-                // Aqui você pode adicionar lógica adicional antes de exibir o modal, se necessário
-                $('#carrinhoModal').modal('show');
-            }
-        </script>
+        <script src="js/carrinho.js" defer></script>
     </body>
 
     </html>
