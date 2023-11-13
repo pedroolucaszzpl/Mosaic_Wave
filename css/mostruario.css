@@ -8,6 +8,44 @@
     --white: #ffff;
 }
 
+.logout {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 40px;
+ }
+ 
+ .logout a {
+    text-decoration: none;
+    color: #fff;
+ }
+ 
+ .logout:hover {
+    background-color: var(--InGreen);
+    border-radius: 3px;
+ }
+ 
+
+.logarConta {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 40px;
+}
+
+.logarConta a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logarConta:hover {
+    background-color: var(--InGreen);
+    border-radius: 3px;
+}
 * {
     margin: 0;
     padding: 0;
@@ -39,11 +77,9 @@ body {
 }
 
 /*cabeçalho*/
-#icon {
-    color: #fff;
-    cursor: pointer;
-}
 
+<<<<<<< HEAD
+=======
 #icon:hover {
     color: #bababa;
 }
@@ -214,6 +250,7 @@ p.user{
     background-color: var(--InGreen);
     border-radius: 3px;
 }
+>>>>>>> ac208c1881ee92a1c0f856b47f6ef8e03a560a0a
 
 .descricao {
     width: 400px; /* Define a largura máxima da descrição do produto */
@@ -521,17 +558,6 @@ border-radius: 10px;
     display: flex;
     align-items: center;
 }
-
-.line {
-    height: 2px;
-    background: var(--black);
-    margin: 15px;
-}
-
-.pag {
-    font-size: 20px;
-}
-
 .desc_produto{
     display: flex !important;
     flex-direction: row;

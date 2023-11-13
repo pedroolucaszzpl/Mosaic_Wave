@@ -12,7 +12,7 @@ if (!isset($_SESSION["usuario_id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/vestuario.css">
+    <link rel="stylesheet" href="css/vest.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -58,7 +58,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 </form>
             </div>
             <div class="buy">
-                 <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
+                <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
             </div>
             <?php
             if (!isset($_SESSION["usuario_id"])) {
@@ -111,6 +111,15 @@ if (!isset($_SESSION["usuario_id"])) {
                     <div class="line"></div>
                 </div>
             </div>
+            <?php
+            if (isset($_SESSION['permissao'])) {
+                echo "<div class='inserir'>";
+                echo '<form method="post" class="adicionar" action="./adicionar/formadd_vestuario.php">';
+                echo '<input type="submit" class="add" value="Inserir Item"></input>';
+                echo '</form>';
+                echo "</div>";
+            }
+            ?>
             <div class="clothes">
                 <?php
                 include 'conexao.php';
@@ -129,11 +138,13 @@ if (!isset($_SESSION["usuario_id"])) {
                             echo "<p class='price'>R$" . $row["vestuario_preco"] . "</p>";
                             echo "</a>";
                             if (isset($_SESSION['permissao'])) {
+                                echo "<div class='exclude'>";
                                 echo "<form method='POST' action='excluir/excluir_vest.php'>";
                                 echo "<input type='hidden' name='vestuario_id' value='" . $row['vestuario_id'] . "'>";
                                 echo "<button class='excluir_btn' data-item-id=" . $row['vestuario_id'] . ">Excluir</button>";
                                 echo "</form>";
                                 echo "<a class='editar_btn' href='update/update_vest.php?vestuario_id=" . $row['vestuario_id'] . "'>Editar</a>";
+                                echo "</div>";
                             }
                             echo "</div>";
 
@@ -157,6 +168,15 @@ if (!isset($_SESSION["usuario_id"])) {
                     <div class="line"></div>
                 </div>
             </div>
+            <?php
+            if (isset($_SESSION['permissao'])) {
+                echo "<div class='inserir'>";
+                echo '<form method="post" class="adicionar" action="./adicionar/formadd_acessorio.php">';
+                echo '<input type="submit" class="add" value="Inserir Item"></input>';
+                echo '</form>';
+                echo "</div>";
+            }
+            ?>
             <div class="clothes">
                 <?php
                 include 'conexao.php';
@@ -175,11 +195,13 @@ if (!isset($_SESSION["usuario_id"])) {
                             echo "<p class='price'>R$" . $row["acessorio_preco"] . "</p>";
                             echo "</a>";
                             if (isset($_SESSION['permissao'])) {
+                                echo "<div class='exclude'>";
                                 echo "<form method='POST' action='excluir/excluir_aces.php'>";
                                 echo "<input type='hidden' name='acessorio_id' value='" . $row['acessorio_id'] . "'>";
                                 echo "<button class='excluir_btn' data-item-id=" . $row['acessorio_id'] . ">Excluir</button>";
                                 echo "</form>";
                                 echo "<a class='editar_btn' href='update/update_aces.php?acessorio_id=" . $row['acessorio_id'] . "'>Editar</a>";
+                                echo "</div>";
                             }
                             echo "</div>";
 
@@ -209,9 +231,18 @@ if (!isset($_SESSION["usuario_id"])) {
                     <div class="line"></div>
                 </div>
             </div>
+            <?php
+            if (isset($_SESSION['permissao'])) {
+                echo "<div class='inserir'>";
+                echo '<form method="post" class="adicionar" action="./adicionar/formadd_tenis.php">';
+                echo '<input type="submit" class="add" value="Inserir Item"></input>';
+                echo '</form>';
+                echo "</div>";
+            }
+            ?>
             <div class="clothes">
+
                 <?php
-                include 'conexao.php';
                 // Faça a consulta SQL
                 $sql = "SELECT * FROM tenis WHERE tenis_cat = 'normal' LIMIT 4";
                 $resultado = $mysqli->query($sql); // $mysqli é o objeto da conexão
@@ -227,8 +258,10 @@ if (!isset($_SESSION["usuario_id"])) {
                             echo "<p class='price'>R$" . $row["tenis_preco"] . "</p>";
                             echo "</a>";
                             if (isset($_SESSION['permissao'])) {
+                                echo "<div class='exclude'>";
                                 echo "<a class='excluir_btn' href='excluir_calc.php?tenis_id=" . $row['tenis_id'] . "'>Excluir</a>";
                                 echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=" . $row['tenis_id'] . "'>Editar</a>";
+                                echo "</div>";
                             }
                             echo "</div>";
 

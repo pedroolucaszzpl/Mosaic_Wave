@@ -118,7 +118,7 @@ if (!isset($_SESSION['usuario_id'])) {
             <?php
             if (isset($_SESSION['permissao'])) {
             echo '<form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">';
-            echo  '<input type="submit" class="add" value="+"></input>';
+            echo  '<input type="submit" class="add" value="Inserir Item"></input>';
             echo '</form>';
             }
             ?>
@@ -143,6 +143,7 @@ if (!isset($_SESSION['usuario_id'])) {
                             echo "<a href='mostruario.php?id=" . $row['tenis_id'] . "'>";
                             echo "<div class= 'tenisous'>";
                             echo "<img src='" . $row["tenis_img"] . "'>";
+                            echo "<div class='linhazinha'></div>";
                             echo "<p class='name'>" . $row["tenis_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["tenis_preco"] . "</p>";
                             echo "</div>";
@@ -175,7 +176,7 @@ if (!isset($_SESSION['usuario_id'])) {
             <?php
             if (isset($_SESSION['permissao'])) {
             echo '<form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">';
-            echo  '<input type="submit" class="add" value="+"></input>';
+            echo  '<input type="submit" class="add" value="Inserir Item"></input>';
             echo '</form>';
             }
             ?>
@@ -201,6 +202,7 @@ if (!isset($_SESSION['usuario_id'])) {
                             echo "<a href='mostruario_camiseta.php?id=" . $row['camiseta_id'] . "'>";
                             echo '<div class="camisabaw">';
                             echo "<img src='" . $row["camiseta_img"] . "'>";
+                            echo "<div class='linhazinha'></div>";
                             echo "<p class='name'>" . $row["camiseta_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["camiseta_preco"] . "</p>";
                             echo "</div>";
