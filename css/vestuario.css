@@ -28,6 +28,7 @@ body {
    font-family: "Bauhaus";
    src: url(../BauhausFont/BauhausRegular.ttf);
 }
+
 #icon {
    color: #fff;
    cursor: pointer;
@@ -145,7 +146,7 @@ aside {
    width: 40px;
 }
 
-p.user{
+p.user {
    color: #fff;
    font-family: "Bauhaus";
    font-size: 16px;
@@ -153,7 +154,7 @@ p.user{
    font-weight: bold;
 }
 
-.formss{
+.formss {
    display: flex;
 }
 
@@ -198,26 +199,29 @@ p.user{
    border-radius: 3px;
 }
 
-.logout a:hover{
+.logout a:hover {
    text-decoration: none;
    color: #fff;
 }
 
-.logarConta{
+.logarConta {
    display: flex;
    align-items: center;
    justify-content: center;
    width: 70px;
    height: 40px;
 }
-.logarConta a{
+
+.logarConta a {
    text-decoration: none;
    color: #fff;
 }
-.logarConta:hover{
+
+.logarConta:hover {
    background-color: var(--InGreen);
    border-radius: 3px;
 }
+
 /*main*/
 .barra {
    width: 100%;
@@ -235,13 +239,14 @@ p.user{
    cursor: pointer;
    text-decoration: none;
 }
+
 .excluir_btn:hover {
    text-decoration: none;
 }
 
 .editar_btn {
    margin-top: 5px;
-   background-color:var(--LightGreen);
+   background-color: var(--LightGreen);
    border-radius: 5px;
    color: #fff;
    border: none;
@@ -272,27 +277,27 @@ p.user{
    font-weight: 700;
 }
 
-.clothes{
+.clothes {
    padding-top: 70px;
-   display:flex;
+   display: flex;
    flex-wrap: wrap;
    flex-direction: row;
    background: #211B15;
    width: 100%;
 }
 
-.clothes img{
+.clothes img {
    width: 300px;
    height: 300px;
 }
 
-.clothes div{
+.clothes div {
    padding-left: 35px;
-   padding-right:35px;
+   padding-right: 35px;
    text-align: left;
 }
 
-p.desc{
+p.desc {
    color: #fff;
    font-size: 16px;
    font-family: "Bauhaus";
@@ -300,16 +305,44 @@ p.desc{
    max-width: 300px;
 }
 
-p.price{
+p.desc:hover {
+   color:#bababa;
+}
+
+p.price {
    color: #fff;
    font-size: 32px;
    font-family: "Bauhaus";
    font-weight: bold;
 }
 
-.sweater { 
+p.price:hover{
+   color: #bababa;
+}
+.sweater {
    margin-bottom: 10px;
 }
+
+.sweater p:hover{
+   color:#baba;
+}
+
+#item:hover {
+   text-decoration: none;
+}
+#item p:hover{
+   color: #bababa;
+}
+
+.sweater img:hover{
+   background: linear-gradient(white, white) padding-box, linear-gradient(to right, #00FF00, #3cff3c, #85ff85) border-box;
+   border: 3px solid transparent;
+}
+
+.sweater img{
+   border: 3px solid transparent;
+}
+
 /*footer css*/
 
 .footer-clean {
@@ -327,14 +360,14 @@ p.price{
 
 @media (max-width: 767px) {
    .footer-clean .item {
-       text-align: center;
-       padding-bottom: 20px;
+      text-align: center;
+      padding-bottom: 20px;
    }
 }
 
 @media (max-width: 768px) {
    .footer-clean .item.social {
-       text-align: center;
+      text-align: center;
    }
 }
 
@@ -386,95 +419,96 @@ p.price{
    opacity: 0.6;
 }
 
-@media screen and  (max-width:750px) {
+@media screen and (max-width:750px) {
    #menu_vertical {
-       display: block;
+      display: block;
    }
 
    #icon {
-       padding-left: 8px;
+      padding-left: 8px;
    }
 
    .navbar {
-       align-items: left;
+      align-items: left;
    }
 
    .navbar-logo {
-       width: 65px;
-       align-items: left;
-       margin: 8px;
+      width: 65px;
+      align-items: left;
+      margin: 8px;
    }
 
    .search {
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       width: 530px;
-       height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 530px;
+      height: 20px;
    }
 
    .contentHead {
-       display: none;
+      display: none;
    }
 
    #carrinho {
-       display: none;
+      display: none;
    }
 
    .marcas {
-       height: 350px;
+      height: 350px;
    }
 
    .brandimg img {
-       width: 100px;
-       height: 100px !important;
+      width: 100px;
+      height: 100px !important;
    }
 
    .brandimg {
-       padding-top: 20px;
-       display: grid;
-       grid-template-columns: repeat(2, 1fr);
-       grid-gap: 3%;
+      padding-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 3%;
    }
 
    .brand {
-       height: 100px;
+      height: 100px;
    }
 
    .brand1 {
-       height: 100px;
+      height: 100px;
    }
 
    .slide {
-       display: none;
+      display: none;
    }
 
    .slidesec {
-       display: flex;
+      display: flex;
    }
 }
 
 @media screen and (min-width: 751px) and (max-width:1000px) {
    #menu_vertical {
-       display: block;
+      display: block;
    }
 
    #icon {
-       padding-left: 8px;
+      padding-left: 8px;
    }
 
    .navbar {
-       align-items: left;
+      align-items: left;
    }
 
    .navbar-logo {
-       width: 65px;
-       align-items: left;
-       margin: 8px;
+      width: 65px;
+      align-items: left;
+      margin: 8px;
    }
 
    .search {
-       width: 200px;
+      width: 200px;
    }
 }
-   /* .ask{ */
+
+/* .ask{ */

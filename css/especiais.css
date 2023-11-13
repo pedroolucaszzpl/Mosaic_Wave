@@ -292,12 +292,12 @@ div#linhas {
 }
 .all a{
     text-decoration: none;
-    color: #211B15;
 }
 
 .all button {
     margin-top: 5px;
 }
+
 
 .calcous {
     background-color: #211B15;
@@ -343,12 +343,22 @@ p.name {
     font-size: 13px;
     margin: 0 5px;
     font-weight: bold;
+    color: #211B15;
+}
+
+p.name:hover{
+    color: #828282;
 }
 
 p.price {
     font-family: "Bauhaus";
     font-size: 22px;
     font-weight: bold;
+    color: #211B15;
+}
+
+p.price:hover{
+    color: #828282;
 }
 
 .secGreen {

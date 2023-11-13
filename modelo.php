@@ -123,7 +123,7 @@ if (!isset($_SESSION["usuario_id"])) {
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo '<div class="sweater">';
-                            echo "<a href='mostruario_vestuario.php?id=" . $row['vestuario_id'] . "'>";
+                            echo "<a id='item' href='mostruario_vestuario.php?id=" . $row['vestuario_id'] . "'>";
                             echo "<img src='" . $row["vestuario_img"] . "'>";
                             echo "<p class='desc'>" . $row["vestuario_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["vestuario_preco"] . "</p>";
@@ -169,7 +169,7 @@ if (!isset($_SESSION["usuario_id"])) {
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo '<div class="sweater">';
-                            echo "<a href='mostruario_acessorio.php?id=" . $row['acessorio_id'] . "'>";
+                            echo "<a id='item' href='mostruario_acessorio.php?id=" . $row['acessorio_id'] . "'>";
                             echo "<img src='" . $row["acessorio_img"] . "'>";
                             echo "<p class='desc'>" . $row["acessorio_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["acessorio_preco"] . "</p>";
@@ -221,7 +221,7 @@ if (!isset($_SESSION["usuario_id"])) {
                     if ($resultado->num_rows > 0) {
                         while ($row = $resultado->fetch_assoc()) {
                             echo '<div class="sweater">';
-                            echo "<a href='mostruario.php?id=" . $row['tenis_id'] . "'>";
+                            echo "<a id='item' href='mostruario.php?id=" . $row['tenis_id'] . "'>";
                             echo "<img src='" . $row["tenis_img"] . "'>";
                             echo "<p class='desc'>" . $row["tenis_modelo"] . "</p>";
                             echo "<p class='price'>R$" . $row["tenis_preco"] . "</p>";
