@@ -58,7 +58,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 </form>
             </div>
             <div class="buy">
-                <img id="carrinho" src="img/carrinho.png" alt="">
+            <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
             </div>
             <?php
             if (!isset($_SESSION["usuario_id"])) {
@@ -72,6 +72,31 @@ if (!isset($_SESSION['usuario_id'])) {
                 echo    "</div>";
             }
             ?>
+            <div class="nav-username">
+                <!-- Aqui você pode exibir o nome de usuário -->
+                <?php
+                if (isset($_SESSION['funcionario_nome'])) {
+                    echo $_SESSION['funcionario_nome'];
+                } else {
+                    // Se o nome de usuário não estiver na sessão, você deve recuperá-lo do banco de dados aqui
+                    include 'conexao.php'; // Certifique-se de incluir o arquivo de conexão
+                
+                    // Faça uma consulta para obter o nome de usuário com base no usuário logado
+                
+                    // Substitua esta linha pela sua consulta SQL
+                    $sql = "SELECT funcionario_nome FROM funcionario WHERE funcionario_id = {$_SESSION['usuario_id']}";
+                
+                    $resultado = $mysqli->query($sql); // Execute a consulta
+                
+                    if ($resultado && $resultado->num_rows > 0) {
+                        $row = $resultado->fetch_assoc();
+                        echo "<p class='user'>" . $row['funcionario_nome'] . "</p>";
+                    } else {
+                        echo "Nome de usuário não encontrado";
+                    }
+                }
+                ?>
+            </div>
             
             <a class="navbar-logo" href="main.php">
                 <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
@@ -79,6 +104,43 @@ if (!isset($_SESSION['usuario_id'])) {
         </nav>
     </header>
    <main> 
+   <div class="cart-container">
+        <h2>Carrinho de Compras</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aqui você pode usar PHP para exibir os itens do carrinho -->
+                <!-- ?php
+                    // Substitua isso com a lógica para recuperar itens do carrinho do banco de dados
+                    $cartItems = [
+                        ['product_name' => 'Produto 1', 'quantity' => 2, 'price' => 19.99],
+                        ['product_name' => 'Produto 2', 'quantity' => 1, 'price' => 29.99]
+                    ];
+
+                    foreach ($cartItems as $item) {
+                        echo "<tr>";
+                        echo "<td>{$item['product_name']}</td>";
+                        echo "<td>{$item['quantity']}</td>";
+                        echo "<td>\${$item['price']}</td>";
+                        echo "<td>\${$item['quantity'] * $item['price']}</td>";
+                        echo "</tr>";
+                    }
+                ?> -->
+            </tbody>
+        </table>
+
+        <div class="total">
+           <p>Total do Carrinho: $ <!--?php echo calcularTotal($cartItems); ?>--></p>
+        </div>
+    </div>
    
    </main>
     <!-- Início do Rodapé -->

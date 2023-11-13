@@ -99,50 +99,6 @@ aside {
     width: 100%;
 }
 
-.cart-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-}
-
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-}
-
-thead {
-    background-color: #f2f2f2;
-}
-
-.total {
-    margin-top: 20px;
-    text-align: right;
-}
-
-.total p {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-}
-
-
 p.user{
     color: #fff;
     font-family: "Bauhaus";
@@ -192,7 +148,7 @@ p.user{
 }
 
 #lupa {
-    width: 50px;
+    width: 30px;
     padding-right: 20px;
 }
 
@@ -683,4 +639,47 @@ p.price {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.cart-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+.total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.total p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }

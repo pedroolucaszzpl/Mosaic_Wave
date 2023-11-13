@@ -56,7 +56,7 @@ include('conexao.php');
                 </form>
             </div>
             <div class="buy">
-                <img id="carrinho" src="img/carrinho.png" alt="">
+                <a href="carrinho.php"><input type="image" id="carrinho" src="img/carrinho.png" alt="">
             </div>
             <?php
             if (!isset($_SESSION["usuario_id"])) {
