@@ -318,6 +318,7 @@ if (!isset($_SESSION["usuario_id"])) {
             </div>
         </footer>
     </div>
+    <script src="js/main.js"></script>
     <script>
         // Adicione este script no final do seu arquivo PHP, antes do fechamento da tag </body>
         document.addEventListener('DOMContentLoaded', function () {
@@ -335,7 +336,6 @@ if (!isset($_SESSION["usuario_id"])) {
             });
         });
     </script>
-    <script src="js/main.js" defer></script>
 </body>
 
 </html>

@@ -434,20 +434,16 @@ button {
     }
 }
 
-@media (max-width:767px) {
-    .footer-clean .item.social>a {
-        margin-top: 10px;
-    }
-}
-
 .footer-clean .copyright {
     margin-top: 14px;
     margin-bottom: 0;
     font-size: 13px;
     opacity: 0.6;
 }
-
-@media screen and (max-width:750px) {
+@media (max-width:767px) {
+    .footer-clean .item.social>a {
+        margin-top: 10px;
+    }
     #menu_vertical {
         display: block;
     }
@@ -514,7 +510,12 @@ button {
     }
 }
 
-@media screen and (min-width: 750px) and (max-width:1000px) {
+@media screen and (min-width: 768px) and (max-width:1000px)
+ {
+
+    .formss{
+        margin-left: 30px;
+    }
     #menu_vertical {
         display: block;
     }
@@ -538,7 +539,7 @@ button {
     }
 
     .ask {
-        width: 450px;
+        width: 250px;
     }
 
     .contentHead {

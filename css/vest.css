@@ -200,11 +200,6 @@ p.user {
    border-radius: 3px;
 }
 
-.logout a:hover {
-   text-decoration: none;
-   color: #fff;
-}
-
 .logarConta {
    display: flex;
    align-items: center;
@@ -437,7 +432,7 @@ p.price {
    opacity: 0.6;
 }
 
-@media screen and (max-width:750px) {
+@media screen and (max-width:767px) {
    #menu_vertical {
       display: block;
    }
@@ -457,11 +452,11 @@ p.price {
    }
 
    .search {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 530px;
-      height: 20px;
+      width: 230px;
+   }
+
+   .ask{
+      width: 150px;
    }
 
    .contentHead {
@@ -503,30 +498,80 @@ p.price {
    .slidesec {
       display: flex;
    }
+   /* Adicione estas regras de mídia para tornar o layout responsivo em telas menores */
+
+/* @media screen and (max-width: 767px) { */
+
+    .clothes img {
+        width: 100%;
+        height: auto;
+    }
+
+    .sweater {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .add {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .barra {
+        height: 25px;
+    }
 }
 
-@media screen and (min-width: 751px) and (max-width:1000px) {
+/* Adicione essas regras de mídia para ajustar o layout em telas de 768px a 1000px */
+@media screen and (min-width: 768px) and (max-width:1000px) {
+   .formss{
+       margin-left: 30px;
+   }
+   .line {
+       width: 40%;
+   }
+
+   p.pag {
+       font-size: 20px;
+   }
+
    #menu_vertical {
-      display: block;
+       display: block;
    }
 
    #icon {
-      padding-left: 8px;
+       padding-left: 8px;
    }
 
    .navbar {
-      align-items: left;
+       align-items: left;
    }
 
    .navbar-logo {
-      width: 65px;
-      align-items: left;
-      margin: 8px;
+       width: 65px;
+       align-items: left;
+       margin: 8px;
    }
 
    .search {
-      width: 200px;
+       width: 200px;
+   }
+
+   .ask {
+       width: 250px;
+   }
+
+   .contentHead {
+       display: none;
+   }
+
+   #carrinho {
+       display: none;
+   }
+   .clothes{
+      justify-content: center;
    }
 }
 
-/* .ask{ */
+
+
