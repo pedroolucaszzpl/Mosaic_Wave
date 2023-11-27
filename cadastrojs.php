@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $sql = "INSERT INTO funcionario (funcionario_nome,funcionario_email,funcionario_senha, funcionario_funcao) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt-> bind_param(" , , , ", $nome, $email, $senha_hash, $funcao);
+    $stmt-> bind_param("ssss", $nome, $email, $senha_hash, $funcao);
     $stmt->execute();
 
     header ('Location: logar.php ');
