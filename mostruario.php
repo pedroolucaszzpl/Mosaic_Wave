@@ -125,13 +125,13 @@ if (!isset($_SESSION["usuario_id"])) {
                         echo "</div>";
                         echo "<div class='botoes-mostruario'>";
                         echo "<button id='botao-add' onclick='addToCart(". $row["tenis_modelo"] .")'>COMPRAR AGORA</button>";
-                        echo "<input type='button' value='Adicionar ao carrinho' id='botao-add' data-nome=". $row['tenis_modelo'] ." data-preco=". $row['tenis_preco']." data-imagem=". $row["tenis_img"].">";                     
+                        echo "<input type='button' value='Adicionar ao carrinho' id='botao-add' data-nome=". $row['tenis_modelo'] ." data-preco=". $row['tenis_preco']." data-imagem=". $row["tenis_img"].">";                 
                         echo "</div>";
                         echo "</div>";
                         echo "</div>";
                     }
                 }
-            }
+        
             //    }
             ?>
     </main>
