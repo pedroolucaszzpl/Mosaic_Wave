@@ -191,9 +191,9 @@ if (!isset($_SESSION["usuario_id"])) {
                     <div class="col-sm-4 col-md-3 item">
                         <h3></h3>
                         <ul>
-                            <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/senaitaubate/?locale=pt_BR"><i class="icon ion-social-facebook"></i></a></li>
+                            <li><a href="https://x.com/senai_taubate?s=20"><i class="icon ion-social-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/senaitaubate/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="><i class="icon ion-social-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
