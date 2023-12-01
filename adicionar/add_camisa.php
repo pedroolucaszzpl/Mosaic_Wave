@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($mysqli->query($sql)) {
             $referer = $_POST['referer'];
-            header("Location: " . $referer); // Redireciona de volta à página anterior
+            header("Location: ../especiais.php" . $referer); // Redireciona de volta à página anterior
             exit();
         } else {
             die("Erro na inserção: " . $mysqli->error);
