@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="css/calcados.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /><!--Google Link Icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!--Google Link Icon-->
     <title>IntenseStreet Calçados</title>
 </head>
 
 <body>
-<header>
+    <header>
         <nav class="navbar">
             <div class="contentHead">
                 <div class="navbar-menu">
@@ -23,7 +24,7 @@
                         <li><select name="departamentos" id="departamentos" onchange="redirectToPage(this)">
                                 <option value="" disabled selected hidden>Departamentos</option>
                                 <option value="vestuario">Vestuário</option>
-                               <option value="especial">Edições Especiais</option>
+                                <option value="especial">Edições Especiais</option>
 
                             </select>
                         </li>
@@ -55,14 +56,20 @@
             </div>
             <?php
             if (!isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logarConta'>";
-                echo    "<a href='index.php'>Logar</a>";
-                echo    "</div>";
-             }
+
+                echo "<div class='logarConta'>";
+                echo "<a href='logar.php'>Logar</a>";
+                echo "</div>";
+            }
+
+            echo "<div class='logarConta'>";
+            echo "<a href='index.php'>Logar</a>";
+            echo "</div>";
+
             if (isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logout'>";
-                echo    "<a href='logout.php'>Sair</a>";
-                echo    "</div>";
+                echo "<div class='logout'>";
+                echo "<a href='logout.php'>Sair</a>";
+                echo "</div>";
             }
             ?>
             <a class="navbar-logo" href="main.php">
@@ -70,9 +77,9 @@
             </a>
         </nav>
     </header>
-   <main> 
-    
-   </main>
+    <main>
+
+    </main>
     <!-- Início do Rodapé -->
     <div class="footer-clean">
         <footer>
@@ -96,17 +103,20 @@
                     <div class="col-sm-4 col-md-3 item">
                         <h3></h3>
                         <ul>
-                            <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/senaitaubate/?locale=pt_BR"><i
+                                        class="icon ion-social-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/senai_taubate"><i class="icon ion-social-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/senaitaubate/"><i
+                                        class="icon ion-social-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-<script src="js/homep.js" async></script>
-<script src="js/main.js" defer></script>
+    <script src="js/homep.js" async></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
