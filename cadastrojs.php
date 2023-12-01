@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt-> bind_param("ssss", $nome, $email, $senha_hash, $funcao);
     $stmt->execute();
 
-    header ('Location: logar.php ');
+    header ('Location: index.php ');
     exit();
     
 }

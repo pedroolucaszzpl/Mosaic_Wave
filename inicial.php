@@ -15,8 +15,8 @@ if (!isset($_SESSION["usuario_id"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <!--Google Link Icon-->
-    <link rel="stylesheet" href="css/teste.css">
-    <title>IntenseStreet Mostruario Acessorio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <title>IntenseStreet HomePage</title>
 </head>
 
 
@@ -106,56 +106,67 @@ if (!isset($_SESSION["usuario_id"])) {
         <div class="barra">
             <div id="linhas">
                 <div class="line"></div>
-                <p class="pag">DESCRIÇÃO</p>
+                <p class="pag">IntenseStreet</p>
                 <div class="line"></div>
             </div>
         </div>
-            <?php
-            include 'conexao.php';
-            $vestuario_id = $_GET['id'];
-            $sql = "SELECT * FROM vestuario WHERE vestuario_id = '$vestuario_id'";
-            $resultado = $mysqli->query($sql);
+        <div class="slide first">
+            <section class="galery">
+                <div class="fotos">
+                    <img src="img/homepage/1.png" alt="slide1">
+                    <img src="img/homepage/2.png" alt="slide2">
+                    <img src="img/homepage/4.png" alt="slide3">
+                    <img src="img/homepage/3.png" alt="slide4">
+                </div>
+            </section>
+        </div>
+        <div class="slidesec">
+            <section class="galery">
+                <div class="fotos">
+                    <img src="img/homepage/1response.png" alt="slide1">
+                    <img src="img/homepage/2response.png" alt="slide2">
+                    <img src="img/homepage/4response.png" alt="slide3">
+                    <img src="img/homepage/3response.png" alt="slide4">
+                </div>
+            </section>
+        </div>
+        <div class="marcas">
+            <div class="barra">
+                <div id="linhas">
+                    <div class="line"></div>
+                    <p class="pag">Marcas</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="brandimg">
+                <div class="b1">
+                    <div class="brand br1"><a href="https://www.adidas.com.br/"><img class="gren"
+                                src="img/homepage/adidas (1).png" alt=""></a></div>
+                    <p>Adidas</p>
+                </div>
+                <div class="b1">
+                    <div class="brand br2"><a href="https://www.ous.com.br/"><img class="purpl"
+                                src="img/homepage/ous.png" alt=""></a></div>
+                    <p>OUS</p>
+                </div>
+                <div class="b1">
+                    <div class="brand br3"><a
+                            href="https://www.bawclothing.com.br/baw/acessorios?order=OrderByReleaseDateDESC"><img
+                                class="gren" src="img/homepage/baw.png" alt=""></a></div>
+                    <p>BAW</p>
+                </div>
+                <div class="b1">
+                    <div class="brand br4"><a href="https://www.nike.com.br/"><img class="purpl"
+                                src="img/homepage/nike.png" alt=""></a></div>
+                    <p>Nike</p>
+                </div>
 
-            if ($resultado) {
-                //          if ($resultado->num_rows() > 0) {
-                while ($row = $resultado->fetch_assoc()) {
-                    echo "<div class='desc_produto'>";
-                    echo "<div class='principal'>";
-                    echo "<img class='img2' src='" . $row["vestuario_img"] . "'>";
-                    echo "</div>";
-                    echo "<div class='descricao'>";
-                    echo "<div class='nome'>";
-                    echo "<h3>" . $row["vestuario_modelo"] . "</h3>";
-                    echo "</div>";
-                    echo "<div class='cor'>";
-                    echo "<label for='cor'>Cor:</label>";
-                    echo "<p class='desc'>" . $row["vestuario_cor"] . "</p>";
-                    echo "</div>";
-                    echo "<div class='cor'>";
-                    echo "<label for='tamanho'>Tamanho:</label>";
-                    echo "<p class='desc'>" . $row["vestuario_tamanho"] . "</p>";
-                    echo "</div>";
-                    echo "<div class='cor'>";
-                    echo "<p class='price'>R$" . $row["vestuario_preco"] . "</p>";
-                    echo "</div>";
-                    echo "<div class='pagamento'>";
-                    echo "<label for='pagamento'>Forma de Pagamento:</label>";
-                    echo "<select id='pagamento'>";
-                    echo "<option value='credito'>Cartão de Crédito</option>";
-                    echo "<option value='boleto'>Boleto</option>";
-                    echo "<option value='Pix'>Pix</option>";
-                    echo "</select>";
-                    echo "</div>";
-                    echo "<div class='botoes-mostruario'>";
-                    echo "<button id='botao-add'>COMPRAR AGORA</button>";
-                    echo "<button id='botao-add'>ADICIONAR AO CARRINHO</button>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
-                }
-            }
-            //    }
-            ?>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
     </main>
     <!-- Início do Rodapé -->
     <div class="footer-clean">
@@ -189,7 +200,8 @@ if (!isset($_SESSION["usuario_id"])) {
             </div>
         </footer>
     </div>
-    <script src="js/homep.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js" defer></script>
 </body>
 

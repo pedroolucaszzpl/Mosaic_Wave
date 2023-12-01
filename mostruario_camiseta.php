@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["usuario_id"])) {
-     header('location: logar.php');
+     header('location: index.php');
      exit ();
  }
 ?>
@@ -27,7 +27,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 <div class="navbar-menu">
                     <ul class="navbar-items">
                         <li class="navbar-items-menu">
-                            <a class="nav-link" href="index.php" onclick="">Páginal Inicial</a>
+                            <a class="nav-link" href="inicial.php" onclick="">Páginal Inicial</a>
                         </li>
                         <li><select name="departamentos" id="departamentos" onchange="redirectToPage(this)">
                                 <option value="" disabled selected hidden>Departamentos</option>
@@ -45,7 +45,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 </span>
                 <menu id="mvertical">
                     <ul>
-                        <li><a href="index.php">Página Inicial</a></li>
+                        <li><a href="inicial.php">Página Inicial</a></li>
                         <li><a href="modelo.php">Calçados</a></li>
                         <li><a href="especiais.php">Edições Especiais</a></li>
                     </ul>
@@ -63,7 +63,7 @@ if (!isset($_SESSION["usuario_id"])) {
             <?php
             if (!isset($_SESSION["usuario_id"])) {
                 echo    "<div class='logarConta'>";
-                echo    "<a href='logar.php'>Logar</a>";
+                echo    "<a href='index.php'>Logar</a>";
                 echo    "</div>";
              }
             if (isset($_SESSION["usuario_id"])) {
@@ -97,7 +97,7 @@ if (!isset($_SESSION["usuario_id"])) {
                 }
                 ?>
             </div>
-            <a class="navbar-logo" href="index.php">
+            <a class="navbar-logo" href="inicial.php">
                 <img src="img/logo1.png" alt="Logo IntenseStreet" description="Logo IntenseStreet" id="logo1">
             </a>
         </nav>

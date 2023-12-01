@@ -56,7 +56,7 @@
             <?php
             if (!isset($_SESSION["usuario_id"])) {
                 echo    "<div class='logarConta'>";
-                echo    "<a href='logar.php'>Logar</a>";
+                echo    "<a href='index.php'>Logar</a>";
                 echo    "</div>";
              }
             if (isset($_SESSION["usuario_id"])) {

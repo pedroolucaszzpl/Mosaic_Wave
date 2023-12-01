@@ -5,7 +5,7 @@ $login_err = 0;
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath($_SERVER['SCRIPT_FILENAME'])) {
     session_destroy();
-    header('Location: index.php');
+    header('Location: inicial.php');
     exit();
 } else {
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && realpath($_SERVER['SCRIPT_FILENAME'])
             header('Location: homepage.php');
         } else {
             sleep(1);
-            header('Location: index.php');
+            header('Location: inicial.php');
         }
     }
 }
