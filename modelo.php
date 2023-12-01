@@ -1,14 +1,13 @@
 <?php
 session_start();
 include 'conexao.php';
-if (!isset($_SESSION["usuario_id"])) {
+if (!isset($_SESSION['usuario_id'])) {
     header('location: logar.php');
     exit();
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +18,6 @@ if (!isset($_SESSION["usuario_id"])) {
     <!--Google Link Icon-->
     <title>IntenseStreet HomePage</title>
 </head>
-
 <body>
     <header>
         <nav class="navbar">
@@ -33,7 +31,6 @@ if (!isset($_SESSION["usuario_id"])) {
                                 <option value="" disabled selected hidden>Departamentos</option>
                                 <option value="vestuario">Vestuário</option>
                                 <option value="especial">Edições Especiais</option>
-
                             </select>
                         </li>
                     </ul>
@@ -309,9 +306,12 @@ if (!isset($_SESSION["usuario_id"])) {
                     <div class="col-sm-4 col-md-3 item">
                         <h3></h3>
                         <ul>
-                            <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/senaitaubate/?locale=pt_BR"><i
+                                        class="icon ion-social-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/senai_taubate"><i class="icon ion-social-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/senaitaubate/"><i
+                                        class="icon ion-social-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>

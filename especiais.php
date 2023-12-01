@@ -86,7 +86,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 
                     // Substitua esta linha pela sua consulta SQL
                     $sql = "SELECT funcionario_nome FROM funcionario WHERE funcionario_id = {$_SESSION['usuario_id']}";
-                
+
                     $resultado = $mysqli->query($sql); // Execute a consulta
                 
                     if ($resultado && $resultado->num_rows > 0) {
@@ -115,13 +115,13 @@ if (!isset($_SESSION['usuario_id'])) {
                 </div>
             </div>
             <div class="sePurple">
-            <?php
-            if (isset($_SESSION['permissao'])) {
-            echo '<form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">';
-            echo  '<input type="submit" class="add" value="Inserir Item"></input>';
-            echo '</form>';
-            }
-            ?>
+                <?php
+                if (isset($_SESSION['permissao'])) {
+                    echo '<form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">';
+                    echo '<input type="submit" class="add" value="Inserir Item"></input>';
+                    echo '</form>';
+                }
+                ?>
             </div>
             <div class="calcous">
                 <img src="img/edicaoesp/ous/ous.png" alt="">
@@ -149,13 +149,13 @@ if (!isset($_SESSION['usuario_id'])) {
                             echo "</div>";
                             echo "</a>";
                             if (isset($_SESSION['permissao'])) {
-                            echo "<div class='exclude'>";
-                            echo "<form method='POST' action='excluir/excluir_calc.php'>";
-                            echo "<input type='hidden' name='tenis_id' value='" . $row['tenis_id'] . "'>";
-                            echo "<button class='excluir_btn' type='submit' data-item-id=" . $row['tenis_id'] . ">Excluir</button>";
-                            echo "</form>";
-                            echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=" . $row['tenis_id'] . "'>Editar</a>";
-                            echo "</div>";
+                                echo "<div class='exclude'>";
+                                echo "<form method='POST' action='excluir/excluir_calc.php'>";
+                                echo "<input type='hidden' name='tenis_id' value='" . $row['tenis_id'] . "'>";
+                                echo "<button class='excluir_btn' type='submit' data-item-id=" . $row['tenis_id'] . ">Excluir</button>";
+                                echo "</form>";
+                                echo "<a class='editar_btn' href='update/update_tenis.php?tenis_id=" . $row['tenis_id'] . "'>Editar</a>";
+                                echo "</div>";
                             }
                             echo "</div>";
                         }
@@ -169,17 +169,17 @@ if (!isset($_SESSION['usuario_id'])) {
 
                 ?>
 
-                
+
             </div>
             <div class="secGreen">
 
-            <?php
-            if (isset($_SESSION['permissao'])) {
-            echo '<form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">';
-            echo  '<input type="submit" class="add" value="Inserir Item"></input>';
-            echo '</form>';
-            }
-            ?>
+                <?php
+                if (isset($_SESSION['permissao'])) {
+                    echo '<form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">';
+                    echo '<input type="submit" class="add" value="Inserir Item"></input>';
+                    echo '</form>';
+                }
+                ?>
             </div>
             <div class="camibaw">
                 <img src="img/edicaoesp/baw/baw.png" alt="">
@@ -208,13 +208,13 @@ if (!isset($_SESSION['usuario_id'])) {
                             echo "</div>";
                             echo "</a>";
                             if (isset($_SESSION['permissao'])) {
-                            echo "<div class='exclude'>";
-                            echo "<form method='POST' action='excluir/excluir_camisa.php'>";
-                            echo "<input type='hidden' name='camiseta_id' value='" . $row['camiseta_id'] . "'>";
-                            echo "<button class='excluir_btn' data-item-id=" . $row['camiseta_id'] . ">Excluir</button>";
-                            echo "</form>";
-                            echo "<a class='editar_btn' href='update/update_cami.php?camiseta_id=" . $row['camiseta_id'] . "'>Editar</a>";
-                            echo "</div>";
+                                echo "<div class='exclude'>";
+                                echo "<form method='POST' action='excluir/excluir_camisa.php'>";
+                                echo "<input type='hidden' name='camiseta_id' value='" . $row['camiseta_id'] . "'>";
+                                echo "<button class='excluir_btn' data-item-id=" . $row['camiseta_id'] . ">Excluir</button>";
+                                echo "</form>";
+                                echo "<a class='editar_btn' href='update/update_cami.php?camiseta_id=" . $row['camiseta_id'] . "'>Editar</a>";
+                                echo "</div>";
                             }
                             echo "</div>";
                         }
@@ -255,9 +255,12 @@ if (!isset($_SESSION['usuario_id'])) {
                     <div class="col-sm-4 col-md-3 item">
                         <h3></h3>
                         <ul>
-                            <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/senaitaubate/?locale=pt_BR"><i
+                                        class="icon ion-social-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/senai_taubate"><i class="icon ion-social-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/senaitaubate/"><i
+                                        class="icon ion-social-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -266,22 +269,22 @@ if (!isset($_SESSION['usuario_id'])) {
     </div>
     <script src="js/main.js"></script>
     <script>
-// Adicione este script no final do seu arquivo PHP, antes do fechamento da tag </body>
-document.addEventListener('DOMContentLoaded', function () {
-    const excluirBtns = document.querySelectorAll('.excluir_btn');
+        // Adicione este script no final do seu arquivo PHP, antes do fechamento da tag </body>
+        document.addEventListener('DOMContentLoaded', function () {
+            const excluirBtns = document.querySelectorAll('.excluir_btn');
 
-    excluirBtns.forEach(function (btn) {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault(); // Impede o envio do formulário automaticamente
+            excluirBtns.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault(); // Impede o envio do formulário automaticamente
 
-            if (confirm('Tem certeza que deseja excluir o item?')) {
-                // Se o usuário confirmar, envie o formulário
-                btn.closest('form').submit();
-            }
+                    if (confirm('Tem certeza que deseja excluir o item?')) {
+                        // Se o usuário confirmar, envie o formulário
+                        btn.closest('form').submit();
+                    }
+                });
+            });
         });
-    });
-});
-</script>
+    </script>
 </body>
 
 </html>

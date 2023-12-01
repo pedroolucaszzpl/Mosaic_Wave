@@ -44,7 +44,7 @@ include('conexao.php');
                         <li><a href="index.php">Página Inicial</a></li>
                         <li><a href="main.php">Calçados</a></li>
                         <li><a href="main.php">Acessórios</a></li>
-                        <li><a href="main.php">Vestuário</a></li>
+                        <li><a href="modelo.php">Vestuário</a></li>
                         <li><a href="especiais.php">Edições Especiais</a></li>
                     </ul>
                 </menu>
@@ -60,14 +60,14 @@ include('conexao.php');
             </div>
             <?php
             if (!isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logarConta'>";
-                echo    "<a href='logar.php'>Logar</a>";
-                echo    "</div>";
-             }
+                echo "<div class='logarConta'>";
+                echo "<a href='logar.php'>Logar</a>";
+                echo "</div>";
+            }
             if (isset($_SESSION["usuario_id"])) {
-                echo    "<div class='logout'>";
-                echo    "<a href='logout.php'>Sair</a>";
-                echo    "</div>";
+                echo "<div class='logout'>";
+                echo "<a href='logout.php'>Sair</a>";
+                echo "</div>";
             }
             ?>
             <a class="navbar-logo" href="index.php">
@@ -90,7 +90,7 @@ include('conexao.php');
                FROM vestuario
                WHERE vestuario_modelo LIKE '%$pesquisa%'";
             $resultado = $mysqli->query($sql_code);
-            
+
             if ($resultado) {
                 if ($resultado->num_rows > 0) {
                     while ($row = $resultado->fetch_assoc()) {
@@ -108,7 +108,7 @@ include('conexao.php');
             } else {
                 die("Erro na consulta: " . $mysqli->error);
             }
-            
+
             ?>
         </div>
     </main>
@@ -135,9 +135,12 @@ include('conexao.php');
                     <div class="col-sm-4 col-md-3 item">
                         <h3></h3>
                         <ul>
-                            <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon ion-social-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/senaitaubate/?locale=pt_BR"><i
+                                        class="icon ion-social-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/senai_taubate"><i class="icon ion-social-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/senaitaubate/"><i
+                                        class="icon ion-social-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
