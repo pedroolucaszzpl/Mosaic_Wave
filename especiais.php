@@ -47,7 +47,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 <menu id="mvertical">
                     <ul>
                         <li><a href="index.php">Página Inicial</a></li>
-                        <li><a href="modelo.php">Calçados</a></li>
+                        <li><a href="modelo.php">Vestuário</a></li>
                         <li><a href="especiais.php">Edições Especiais</a></li>
                     </ul>
                 </menu>
@@ -115,6 +115,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 </div>
             </div>
             <div class="sePurple">
+
                 <?php
                 if (isset($_SESSION['permissao'])) {
                     echo '<form method="post" class="adicionar" action="./adicionar/formadd_camisa.php">';
@@ -122,6 +123,15 @@ if (!isset($_SESSION['usuario_id'])) {
                     echo '</form>';
                 }
                 ?>
+
+            <?php
+            if (isset($_SESSION['permissao'])) {
+            echo '<form method="post" class="adicionar" action="./adicionar/formadd_tenis.php">';
+            echo  '<input type="submit" class="add" value="Inserir Item"></input>';
+            echo '</form>';
+            }
+            ?>
+
             </div>
             <div class="calcous">
                 <img src="img/edicaoesp/ous/ous.png" alt="">
