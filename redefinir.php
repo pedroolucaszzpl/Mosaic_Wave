@@ -16,7 +16,7 @@ include 'conexao.php';
 
     if ($stmt->execute()) {
         echo "Senha redefinida com sucesso!";
-        header("Location: logar.php");
+        header("Location: index.php");
     } else {
         echo "Erro ao redefinir a senha: " . $mysqli->error;
     }

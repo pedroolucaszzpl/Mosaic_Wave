@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 if (!isset($_SESSION["usuario_id"])) {
@@ -5,22 +6,21 @@ if (!isset($_SESSION["usuario_id"])) {
     exit();
 }
 ?>
+=======
+>>>>>>> bba90eac6e2ac3d63ccb5014e09f4a1b0a002a81
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <!--Google Link Icon-->
-    <link rel="stylesheet" href="css/main.css">
-    <title>IntenseStreet HomePage</title>
+    <link rel="stylesheet" href="css/login.css">
+    
+    <title>IntenseStreet</title>
 </head>
 
-
 <body>
+<<<<<<< HEAD
     <header>
         <nav class="navbar">
             <div class="contentHead">
@@ -103,65 +103,43 @@ if (!isset($_SESSION["usuario_id"])) {
     </header>
     <main>
         <div class="barra">
-            <div id="linhas">
-                <div class="line"></div>
-                <p class="pag">IntenseStreet</p>
-                <div class="line"></div>
-            </div>
+=======
+    <div class="content">
+        <div class="logo">
+            <img id="id-img" src="img/logo1.png">
         </div>
-        <div class="slide first">
-            <section class="galery">
-                <div class="fotos">
-                    <img src="img/homepage/1.png" alt="slide1">
-                    <img src="img/homepage/2.png" alt="slide2">
-                    <img src="img/homepage/4.png" alt="slide3">
-                    <img src="img/homepage/3.png" alt="slide4">
-                </div>
-            </section>
-        </div>
-        <div class="slidesec">
-            <section class="galery">
-                <div class="fotos">
-                    <img src="img/homepage/1response.png" alt="slide1">
-                    <img src="img/homepage/2response.png" alt="slide2">
-                    <img src="img/homepage/4response.png" alt="slide3">
-                    <img src="img/homepage/3response.png" alt="slide4">
-                </div>
-            </section>
-        </div>
-        <div class="marcas">
-            <div class="barra">
-                <div id="linhas">
-                    <div class="line"></div>
-                    <p class="pag">Marcas</p>
-                    <div class="line"></div>
-                </div>
-            </div>
-            <div class="brandimg">
-                <div class="b1">
-                    <div class="brand br1"><a href="https://www.adidas.com.br/"><img class="gren"
-                                src="img/homepage/adidas (1).png" alt=""></a></div>
-                    <p>Adidas</p>
-                </div>
-                <div class="b1">
-                    <div class="brand br2"><a href="https://www.ous.com.br/"><img class="purpl"
-                                src="img/homepage/ous.png" alt=""></a></div>
-                    <p>OUS</p>
-                </div>
-                <div class="b1">
-                    <div class="brand br3"><a
-                            href="https://www.bawclothing.com.br/baw/acessorios?order=OrderByReleaseDateDESC"><img
-                                class="gren" src="img/homepage/baw.png" alt=""></a></div>
-                    <p>BAW</p>
-                </div>
-                <div class="b1">
-                    <div class="brand br4"><a href="https://www.nike.com.br/"><img class="purpl"
-                                src="img/homepage/nike.png" alt=""></a></div>
-                    <p>Nike</p>
-                </div>
+        <div class="login">
+        <form method="post" action="login.php">
+            <div class="form">
+                <label for="nome_login" id="nome_label">Usuário</label> <br>
+                <input id="nome_login" name="nome_login" required="required" type="text"
+                    placeholder="Usuário de cadastro" />
 
             </div>
+            <div class="form">
+                <label for="senha_login">Senha</label> <br>
+                <input id="senha_login" name="senha_login" required="required" type="password"
+                    placeholder="Digite sua senha" />
+
+            </div>
+
+            <a class="cadastro" href="redefinicao.php">Esqueceu sua senha?
+                 Clique aqui!</a>
+
+>>>>>>> bba90eac6e2ac3d63ccb5014e09f4a1b0a002a81
+            <div id="linhas">
+                <div class="line"></div>
+            </div>
+            <div>
+                <input id="botao_login" type="submit" value="Logar">
+            </div>
+            <a class="cadastro" href="cadastro.php">Não tem uma conta?
+                 Clique aqui!</a>
+                    
+                </form>
+            </div> 
         </div>
+<<<<<<< HEAD
 
         <div>
 
@@ -201,10 +179,12 @@ if (!isset($_SESSION["usuario_id"])) {
                 </div>
             </div>
         </footer>
+=======
+>>>>>>> bba90eac6e2ac3d63ccb5014e09f4a1b0a002a81
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js" defer></script>
+    <footer>
+        
+    </footer>
 </body>
 
 </html>

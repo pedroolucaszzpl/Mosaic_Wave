@@ -14,11 +14,11 @@ if (isset($_SESSION['funcionario_id'])) {
     session_destroy();
     
     // Redirecione o usuário para a página de login ou outra página desejada
-    header("Location: logar.php");
+    header("Location: index.php");
     exit();
 } else {
     // Se o usuário não estiver logado, redirecione-o para a página de login
-    header("Location: logar.php");
+    header("Location: index.php");
     exit();
 }
 ?>
