@@ -455,3 +455,191 @@ p.price {
     font-size: 13px;
     opacity: 0.6;
 }
+@media (max-width:991px) {
+    .footer-clean .item.social>a {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width:767px) {
+    .footer-clean .item.social>a {
+        margin-top: 10px;
+    }
+}
+
+.footer-clean .copyright {
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: 13px;
+    opacity: 0.6;
+}
+
+@media screen and (min-width: 370px) and (max-width:750px) {
+    #menu_vertical {
+        display: block;
+    }
+
+    #icon {
+        padding-left: 8px;
+    }
+
+    .navbar {
+        align-items: left;
+    }
+
+    .navbar-logo {
+        width: 65px;
+        align-items: left;
+        margin: 8px;
+    }
+
+    .search {
+        width: 230px;
+    }
+
+    .contentHead {
+        display: none;
+    }
+
+    #carrinho {
+        display: none;
+    }
+
+    .marcas {
+        height: 350px;
+    }
+
+    .brandimg img {
+        width: 100px;
+        height: 100px !important;
+    }
+
+    .brandimg {
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3%;
+    }
+
+    .brand {
+        height: 100px;
+    }
+
+    .brand1 {
+        height: 100px;
+    }
+
+    .slidesec {
+        display: flex;
+    }
+
+    .desc_produto{
+        flex-direction: column;
+    }
+    .principal {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 150px;
+        display: contents;
+    }
+
+    .principal img {
+        width: 300px;
+        height: 300px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .descricao {
+        width: 300px;
+    }
+
+    #botao-add {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width:1000px) {
+
+    .search {
+        width: 230px;
+    }
+
+    .ask {
+        width: 150px;
+    }
+
+    #menu_vertical {
+        display: block;
+    }
+
+    #icon {
+        padding-left: 8px;
+    }
+
+    .navbar {
+        align-items: left;
+    }
+
+    .navbar-logo {
+        width: 65px;
+        align-items: left;
+        margin: 8px;
+    }
+
+    .search {
+        width: 200px;
+    }
+
+    .ask{
+        width: 450px;
+    }
+
+    .contentHead {
+        display: none;
+    }
+
+    #carrinho {
+        display: none;
+    }
+
+    .marcas {
+        height: 550px;
+        width: 100%;
+    }
+
+    .brandimg img {
+        width: 150px;
+        height: 150px !important;
+    }
+
+    .b1 {
+        padding-top: 35px;
+    }
+
+    .brandimg {
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3%;
+        width: 100%;
+    }
+    .brandimg p{
+        padding-top: 60px;
+    }
+    .brand {
+        height: 100px;
+        
+    }
+    .slide {
+        display: none;
+    }
+
+    .slidesec {
+        display: flex;
+    }
+    .img1 {
+        width: 50%;
+    }
+}
