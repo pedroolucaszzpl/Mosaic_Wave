@@ -14,7 +14,6 @@ body {
   align-items: center;
   background-color: #211B15;
   background-image: url(../img/background.jpg);
-  background-repeat: no-repeat;
   background-size: cover; /* ou 'contain', dependendo do efeito desejado */
   height: 100vh;
   margin: 0; /* Remova margens padrão do corpo da página */
@@ -126,7 +125,7 @@ img {
 }
 
 #id-img {
-  width: 250px !important;
+  width: 200px !important;
 
 }
 
@@ -159,6 +158,16 @@ label {
   height: 2px;
   background: var(--InPurple);
   margin: 15px;
+}
+
+.cadastro{
+  text-decoration: none;
+  color: #ccc;
+  font-family: "Bauhaus", "Helvetica Neue", Helvetica, Arial;
+  margin-bottom: 5%;
+}
+.cadastro:hover{
+  text-decoration: underline var(--InPurple);
 }
 
 .function {

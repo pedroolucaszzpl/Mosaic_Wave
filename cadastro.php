@@ -41,6 +41,8 @@
                     <div class="line"></div>
                 </div>
                 <input id="botao_login" type="submit" value="Cadastrar">
+                <a class="cadastro" href="index.php">Já tem uma conta?
+                 Clique aqui!</a>
             </form>
 
         </div>
